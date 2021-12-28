@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 index page~~~
 =======
 index page
@@ -17,6 +21,9 @@ index page
 >>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 <hr>
 으아아아아아아
+<<<<<<< HEAD
 <button>버튼1</button>
+=======
+>>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 </body>
 </html>
