@@ -8,5 +8,7 @@
 </head>
 <body>
 index page
+
+<p>푸쉬 테스트</p>
 </body>
 </html>
