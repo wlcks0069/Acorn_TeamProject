@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties resource="pack/resource/db.properties" /> <!-- 경로에 맞게 수정 -->
+
+	<typeAliases>
+		<typeAlias type="pack.gpm_controller.GPMemberBean" alias="gpmbean" />
+		<typeAlias type="pack.gpm_model.GPMemberDto" alias="gpmdto" />
+		<typeAlias type="pack.mc_controller.MCBoardBean" alias="mcbean" />
+		<typeAlias type="pack.mc_model.MCBoardDto" alias="mcdto" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="pack/resource/GPMemberDataMapper.xml" />
+		<mapper resource="pack/resource/MCBoardDataMapper.xml" />
+	</mappers>
+</configuration>
