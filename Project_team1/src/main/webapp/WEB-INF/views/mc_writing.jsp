@@ -22,7 +22,7 @@
 </script>
 </head>
 <body>
-	<h3>글쓰기</h3>
+	<h3>새글 작성</h3>
 	<form action=mcwriting method="post" name="mw">
 		<table>
 			<tr>
