@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>MC_Writer</title>
-<link rel="stylesheet" type="text/css" href="./resources/css/board.css">
 <script type="text/javascript">
 	window.onload = function(){
 		let btnAdd = document.querySelector("#btnAdd");
@@ -42,7 +41,7 @@
 			<tr>
 				<td colspan="2" style="text-align: center;">
 					<input type="button" value="등록" id="btnAdd">
-					<input type="button" value="목록" onclick="location.href='mc_list'">
+					<input id="listBtn" type="button" value="목록" onclick="location.href='mcboard'">
 				</td>
 			</tr>
 		</table>
