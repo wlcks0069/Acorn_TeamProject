@@ -15,6 +15,6 @@ public class MCWriteController {
 	@RequestMapping(value = "mcwrite", method = RequestMethod.GET)
 	public String writeProcess() {
 
-		return "redirect:/mc_write.jsp";
+		return "mc_write";
 	}
 }
