@@ -10,6 +10,7 @@
 <body>
 	<div>
 		<h1>Main Content List</h1>
+		<p>여기까진 되는데 글쓰기가 안되네</p>
 		<a href="mcwrite">글쓰기</a>
 	</div>
 </body>
