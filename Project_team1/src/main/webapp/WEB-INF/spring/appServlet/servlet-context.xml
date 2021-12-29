@@ -22,8 +22,8 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="aa.bb.cc" />
-	<context:component-scan base-package="pack.model" />
-	<context:component-scan base-package="pack.controller" />
+	<context:component-scan base-package="pack.gpm_model" />
+	<context:component-scan base-package="pack.gpm_controller" />
 	
 	
 </beans:beans>

@@ -1,4 +1,4 @@
-package pack.model;
+package pack.mc_model;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Repository;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 public class DataSource extends DriverManagerDataSource{
 	public DataSource() {
 		setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		setUrl("jdbc:oracle:thin:@localhost:1521:xe");
-		setUsername("scott");
-		setPassword("tiger");
+		setUrl("jdbc:oracle:thin:@14.63.164.99:1521:xe");
+		setUsername("scott01");
+		setPassword("tiger01");
 	}
 }
