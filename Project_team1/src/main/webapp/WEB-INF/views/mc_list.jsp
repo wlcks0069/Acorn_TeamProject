@@ -10,7 +10,7 @@
 <body>
 	<div>
 		<h1>Main Content List</h1>
-		
+		<a href="mcwrite">글쓰기</a>
 	</div>
 </body>
 </html>
