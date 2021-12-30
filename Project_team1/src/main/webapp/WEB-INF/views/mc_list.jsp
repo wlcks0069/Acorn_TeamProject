@@ -30,8 +30,8 @@
 					</tr>
 					<tr>
 						<th>${maincontent.mc_date }</th>
-						<td>${maincontent.mc_comment }</td>
-						<td>${maincontent.mc_like }</td>
+						<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment } comments</a></td>
+						<td>${maincontent.mc_like } likes</td>
 					</tr>
 				</c:forEach>
 			</tbody>

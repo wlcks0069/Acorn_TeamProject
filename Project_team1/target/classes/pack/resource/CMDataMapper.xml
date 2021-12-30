@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 3. 신규 댓글 작성을 위한 정보 기입 구문-->	
 	<insert id="cmWrite" parameterType="cmbean">
-		insert into commentdb values(#{cm_no},#{mc_no},#{mem_nick},#{mem_email},#{cm_commentcontent},#{cm_date})
+		insert into commentdb values(#{cm_no},#{mc_no},#{mem_nick},#{mem_email},#{cm_commentcontent},sysdate)
 	</insert>
 	
 	<!-- 4. 댓글 수정을 위한 정보 기입 구문 -->	

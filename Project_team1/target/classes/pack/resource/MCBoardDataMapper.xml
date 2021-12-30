@@ -41,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 						
 	<!-- 8. 댓글 수 갱신 -->	
 	<update id="mcCommentCount" parameterType="mcbean">
-		update gpmainboard set mc_comment=mc_comment+1 where mc_no=#{selectednum}
+		update gpmainboard set mc_comment=mc_comment+1 where mc_no=#{mc_no}
 	</update>		
 		
 	<!-- 9. 글 번호 구하는 구문 (글 번호 자동 증가를 위함) -->

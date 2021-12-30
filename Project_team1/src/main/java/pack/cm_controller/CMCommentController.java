@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import pack.cm_model.CMBoardInter;
@@ -31,18 +32,22 @@ public class CMCommentController {
 	String currentUser="";
 	
 	@RequestMapping(value = "cmcomment", method = RequestMethod.GET)
-	public ModelAndView cmcomment_get(HttpSession session) {
+	public ModelAndView cmcomment_get(HttpSession session,
+			@RequestParam("mc_no")String mc_no) {
 		
 		currentUser=(String) session.getAttribute("idkey");
 		
 		ModelAndView view_cmcomment=new ModelAndView("cm_comment");
+		view_cmcomment.addObject("mc_no",mc_no);
 		view_cmcomment.addObject("usernick",gpminter.getNick(currentUser)); 
 		
 		return view_cmcomment;
 	}
 	
 	@RequestMapping(value = "cmcomment", method = RequestMethod.POST)
-	public String cmcomment_post(CMBoardBean cmbean) {
+	public String cmcomment_post(CMBoardBean cmbean,
+			@RequestParam("mc_no")int mc_no) {
+		cmbean.setMc_no(mc_no);
 		cmbean.setCm_date();
 		cmbean.setMem_email(currentUser);
 		cmbean.setMem_nick(gpminter.getNick(currentUser));
