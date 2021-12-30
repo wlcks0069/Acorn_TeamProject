@@ -7,21 +7,12 @@
 <meta charset="UTF-8">
 <title>Main Contents</title>
 <style>
-	#content {
-		height: 500px;
-		width: 500px;
-		text-align: center;
-	}
-	
+#content {
+	height: 500px;
+	width: 500px;
+	text-align: center;
+}
 </style>
-<script type="text/javascript">
-	window.onload = function(){
-		document.querySelector("#btnLike").onclick = chkfunc;
-	}
-	function chkfunc(){
-		document.getElementById("imgId").src = "./resources/images/like.PNG";
-	}
-</script>
 </head>
 <body>
 	<div>
@@ -35,14 +26,17 @@
 						<th>No.${maincontent.mc_no}</th>
 					</tr>
 					<tr>
-						<td id="content" colspan="3" style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
+						<td id="content" colspan="3"
+							style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
 					</tr>
 					<tr>
 						<th>${maincontent.mc_date }</th>
-						<td>${maincontent.mc_comment }</td>
-						<td><button id="btnLike" type="button"><img id="imgId" src="./resources/images/dislike.PNG" width="20" height="20"> ${maincontent.mc_like }</button></td>
-						<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment } comments</a></td>
-						<td>${maincontent.mc_like } likes</td>
+						<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment }
+								comments</a></td>
+						<td><button id="btnLike" type="button">
+								<img id="imgId" src="./resources/images/dislike.PNG" width="20"
+									height="20"> ${maincontent.mc_like }
+							</button></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -52,6 +46,13 @@
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
+		window.onload = function(){
+			document.querySelector("#btnLike").onclick = chkfunc;
+		}
+		function chkfunc(){
+			document.getElementById("imgId").src = "./resources/images/like.PNG";
+		}
+	
 		//페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.
 		let currentPage=${page};
 		//현재 로딩중인지 여부를 관리할 변수
