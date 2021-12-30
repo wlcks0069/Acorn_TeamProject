@@ -7,12 +7,10 @@
 <meta charset="UTF-8">
 <title>Main Contents</title>
 <style>
-
 	#content {
 		height: 500px;
 		width: 500px;
 		text-align: center;
-		background-color: #FFE650;
 	}
 </style>
 </head>
@@ -28,7 +26,7 @@
 						<th>No.${maincontent.mc_no}</th>
 					</tr>
 					<tr>
-						<td id="content" colspan="3">${maincontent.mc_content }</td>
+						<td id="content" colspan="3" style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
 					</tr>
 					<tr>
 						<th>${maincontent.mc_date }</th>

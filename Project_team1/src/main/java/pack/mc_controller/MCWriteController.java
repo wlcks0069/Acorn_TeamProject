@@ -39,7 +39,7 @@ public class MCWriteController {
 	
 	@RequestMapping(value = "mcwrite", method = RequestMethod.POST)
 	public String mcwrite_post(MCBoardBean mcbean,
-			@RequestParam("color")String color, @RequestParam("brightness")int brightness) {
+			@RequestParam("color")String color) {
 		System.out.println("mcwrite_post: 호출 완료");
 		mcbean.setMc_date();
 		mcbean.setMem_email(currentUser);
