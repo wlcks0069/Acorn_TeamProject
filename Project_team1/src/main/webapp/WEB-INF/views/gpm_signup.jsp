@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title></title>
 <script type="text/javascript">
 	window.onload = function() {
 		let btnIns = document.querySelector("#btnsignup");

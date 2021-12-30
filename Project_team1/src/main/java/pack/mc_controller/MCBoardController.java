@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -40,7 +41,7 @@ public class MCBoardController {
 		return totalPage;
 	}
 	
-	@RequestMapping("mcboard")
+	@RequestMapping(value="mcboard", method=RequestMethod.GET)
 	public ModelAndView mcBoard(@RequestParam("page")int page) {
 		
 		totalRecord=boardInter.totalCount();
@@ -55,12 +56,26 @@ public class MCBoardController {
 		andView.addObject("totalpage",getTotalPage());
 		andView.addObject("page",page);
 		
+		return andView;
+	}
+	
+	@RequestMapping(value="moremcboard", method=RequestMethod.POST)
+	public ModelAndView moreMcBoard(@RequestParam("page")int page) {
+		
+		totalRecord=boardInter.totalCount();
+		
+		ArrayList<MCBoardDto> mcList=boardInter.getList();
+		ArrayList<MCBoardDto> result=getListData(mcList, page);
+		
+		System.out.println("MCBoardController: 호출 완료");
+		System.out.println("MCBoardController: 0번 인덱스 자료 본문 확인 "+mcList.get(0).getMc_content());
+		
 		ModelAndView moreView=new ModelAndView("more_mc_list");
 		moreView.addObject("maincontentslist",result);
 		moreView.addObject("totalpage",getTotalPage());
 		moreView.addObject("page",page);
 		
-		return andView;
+		return moreView;
 	}
 }
 
