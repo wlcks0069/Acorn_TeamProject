@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import pack.gpm_model.GPMemberDto;
@@ -37,7 +38,8 @@ public class MCWriteController {
 	}
 	
 	@RequestMapping(value = "mcwrite", method = RequestMethod.POST)
-	public String mcwrite_post(MCBoardBean mcbean) {
+	public String mcwrite_post(MCBoardBean mcbean,
+			@RequestParam("color")String color, @RequestParam("brightness")int brightness) {
 		System.out.println("mcwrite_post: 호출 완료");
 		mcbean.setMc_date();
 		mcbean.setMem_email(currentUser);

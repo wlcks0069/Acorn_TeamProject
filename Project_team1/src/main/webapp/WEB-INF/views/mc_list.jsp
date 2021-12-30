@@ -6,44 +6,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Main Contents</title>
+<style>
+
+	#content {
+		height: 500px;
+		width: 500px;
+		text-align: center;
+		background-color: #FFE650;
+	}
+</style>
 </head>
 <body>
 	<div>
-		<h1>Main Content List</h1>
-		<p>리스트</p>
+		<h1>Git Pen</h1>
 		<a href="mcwrite">글쓰기</a>
+		<table>
+			<tbody>
+				<c:forEach var="maincontent" items="${maincontentslist}">
+					<tr>
+						<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
+						<th>No.${maincontent.mc_no}</th>
+					</tr>
+					<tr>
+						<td id="content" colspan="3">${maincontent.mc_content }</td>
+					</tr>
+					<tr>
+						<th>${maincontent.mc_date }</th>
+						<td>${maincontent.mc_comment }</td>
+						<td>${maincontent.mc_like }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 
-	<table>
-		<thead>
-			<tr style="background-color: silver">
-				리스트 확인용 임시 포맷
-				<th>번호</th>
-				<th>샘플 이미지</th>
-				<th>본문(test는 짧게 해주세요)</th>
-				<th>닉네임</th>
-				<th>작성일</th>
-				<th>좋아요</th>
-				<th>댓글</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="maincontent" items="${maincontentslist}">
-				<tr>
-					<td>${maincontent.mc_no}</td>
-					<td><img
-						src="https://post-phinf.pstatic.net/MjAxODExMDdfMTg5/MDAxNTQxNTQ3MTI0MzMz.x7pnNMgKFtBCuU2ecu_Kb4fOCqZT_e-FicfgELZus6wg.YJK6ERoqHz5_jqLpZu5Sn8GixQOa17sAUcL1I94ogWQg.JPEG/20181028085129.jpg?type=w1200"
-						style="width: 200px" /></td>
-					<td>${maincontent.mc_content }</td>
-					<td>${maincontent.mem_nick }</td>
-					<td>${maincontent.mc_date }</td>
-					<td>${maincontent.mc_like }</td>
-					<td>${maincontent.mc_comment }</td>
-				</tr>
-			</c:forEach>
-		</tbody>
 
-	</table>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		//페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.

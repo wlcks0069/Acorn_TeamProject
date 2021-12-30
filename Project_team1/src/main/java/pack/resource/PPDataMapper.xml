@@ -5,57 +5,57 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="ppdev">
 	<!-- 1. 전체 게시글 리스트 출력 -->
-	<select id="totalMCList" resultType="mcdto">
+	<select id="pptotalMCList" resultType="mcdto">
 		select * from gpmainboard order by mc_no desc
 	</select>
 	
 	<!-- 2. 특정 파라미터에서 조건값을 만족하는 게시글 리스트 출력 -->	
-	<select id="specificMCList" parameterType="mcbean" resultType="mcdto">
+	<select id="ppspecificMCList" parameterType="mcbean" resultType="mcdto">
 		select * from gpmainboard where ${searchParam} like '%' || #{searchValue} ||'%'
 	</select>
 	
 	<!-- 3. 신규 글 작성을 위한 정보 기입 구문-->	
-	<insert id="mcWrite" parameterType="mcbean">
+	<insert id="ppmcWrite" parameterType="mcbean">
 		insert into gpmainboard values(#{mc_no},#{mem_nick},#{mem_email},#{mc_content},#{mc_color},#{mc_brightness},#{mc_like},#{mc_comment},sysdate)
 	</insert>
 		
 	<!-- 4. 글 상세보기 -->	
-	<select id="mcGetDetail" parameterType="string" resultType="mcdto">
+	<select id="ppmcGetDetail" parameterType="string" resultType="mcdto">
 		select * from gpmainboard where mc_no=#{selectednum}
 	</select>	
 	
 	<!-- 5. 글 수정을 위한 정보 기입 구문 -->	
-	<update id="mcUpdate" parameterType="mcbean">
+	<update id="ppmcUpdate" parameterType="mcbean">
 		update gpmainboard set mc_content=#{mc_content},mc_color=#{mc_color},mc_brightness=#{mc_brightness} where mc_no=#{mc_no}
 	</update>
 			
 	<!-- 6. 글 삭제 구문 -->	
-	<delete id="mcDelete" parameterType="mcbean">
+	<delete id="ppmcDelete" parameterType="mcbean">
 		delete from gpmainboard where mc_no=#{selectednum}
 	</delete>		
 				
 	<!-- 7. 좋아요 수 갱신 -->	
-	<update id="mcLikeCount" parameterType="mcbean">
+	<update id="ppmcLikeCount" parameterType="mcbean">
 		update gpmainboard set mc_like=mc_like+1 where mc_no=#{selectednum}
 	</update>		
 						
 	<!-- 8. 댓글 수 갱신 -->	
-	<update id="mcCommentCount" parameterType="mcbean">
+	<update id="ppmcCommentCount" parameterType="mcbean">
 		update gpmainboard set mc_comment=mc_comment+1 where mc_no=#{selectednum}
 	</update>		
 		
 	<!-- 9. 글 번호 구하는 구문 (글 번호 자동 증가를 위함) -->
-	<select id="mccurrentMaxnum" resultType="integer">
+	<select id="ppmccurrentMaxnum" resultType="integer">
 		select max(mc_no) from gpmainboard
 	</select>		
 		
 	<!-- 10. 글 개수 구하는 구문 (paging 처리) -->		
-	<select id="totalCnt" resultType="integer">
+	<select id="pptotalCnt" resultType="integer">
 		select count(*) from gpmainboard
 	</select>	
 		
 	<!-- 11. 작성자를 반환하는 구문 (글 보안 작업) -->
-	<select id="securecode" parameterType="string" resultType="String">
+	<select id="ppsecurecode" parameterType="string" resultType="String">
 		select mem_email from gpmainboard where mc_no=#{selectednum}
 	</select>	
 	

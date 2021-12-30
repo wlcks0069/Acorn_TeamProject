@@ -38,7 +38,7 @@
 </head>
 <body>
 	<h3>글쓰기</h3>
-	<form action="mcwrite" method="post" name="mw">
+	<form action="mcwrite?color='${mc_color.value }'&&brightness='${mc_brightness.value }'" method="post" name="mw">
 		<table>
 			<tr>
 				<td>닉네임</td>
@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="5" name="mc_content"></textarea></td>
+				<td><textarea maxlength="300" cols="80" rows="30" name="mc_content"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center;">
@@ -64,10 +64,11 @@
 				<label for="">현재의 기분</label> 
 				<select name="mc_color">
 						<option value="-1">==색상==</option>
-						<option value="red">기쁨</option>
-						<option value="blue">슬픔</option>
-						<option value="gray">외로움</option>
-						<option value="yellow">심심해</option>
+						<option value="yellow">기쁨 / yellow</option>
+						<option value="red">화남 / red</option>
+						<option value="blue">우울 / blue</option>
+						<option value="purple">무서움 / purple</option>
+						<option value="gray">심심 / gray</option>
 				</select>
 			</li>
 			<li>

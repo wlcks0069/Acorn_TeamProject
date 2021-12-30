@@ -13,8 +13,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="pack.mc_model.MCBoardDto" alias="mcdto" />
 		<typeAlias type="pack.pp_controller.PPBean" alias="ppbean" />
 		<typeAlias type="pack.pp_model.PPDto" alias="ppdto" />
-		<typeAlias type="pack.cm_controller.CMBean" alias="cmbean" />
-		<typeAlias type="pack.cm_model.CMDto" alias="cmdto" />
+		<typeAlias type="pack.cm_controller.CMBoardBean" alias="cmbean" />
+		<typeAlias type="pack.cm_model.CMBoardDto" alias="cmdto" />
 	</typeAliases>
 	
 	<mappers>

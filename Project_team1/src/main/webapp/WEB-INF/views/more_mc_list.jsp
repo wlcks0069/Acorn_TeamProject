@@ -4,14 +4,15 @@
 
 <c:forEach var="maincontent" items="${maincontentslist}">
 	<tr>
-		<td>${maincontent.mc_no}</td>
-		<td><img
-			src="https://post-phinf.pstatic.net/MjAxODExMDdfMTg5/MDAxNTQxNTQ3MTI0MzMz.x7pnNMgKFtBCuU2ecu_Kb4fOCqZT_e-FicfgELZus6wg.YJK6ERoqHz5_jqLpZu5Sn8GixQOa17sAUcL1I94ogWQg.JPEG/20181028085129.jpg?type=w1200"
-			style="width: 200px" /></td>
-		<td>${maincontent.mc_content }</td>
-		<td>${maincontent.mem_nick }</td>
-		<td>${maincontent.mc_date }</td>
-		<td>${maincontent.mc_like }</td>
+		<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
+		<th>No.${maincontent.mc_no}</th>
+	</tr>
+	<tr>
+		<td id="content" colspan="3">${maincontent.mc_content }</td>
+	</tr>
+	<tr>
+		<th>${maincontent.mc_date }</th>
 		<td>${maincontent.mc_comment }</td>
+		<td>${maincontent.mc_like }</td>
 	</tr>
 </c:forEach>
