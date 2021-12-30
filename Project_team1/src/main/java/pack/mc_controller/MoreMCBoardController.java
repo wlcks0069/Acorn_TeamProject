@@ -13,7 +13,7 @@ import pack.mc_model.MCBoardDto;
 import pack.mc_model.MCBoardInter;
 
 @Controller
-public class MCBoardController {
+public class MoreMCBoardController {
 	@Autowired
 	private MCBoardInter boardInter;
 	
@@ -40,7 +40,7 @@ public class MCBoardController {
 		return totalPage;
 	}
 	
-	@RequestMapping("mcboard")
+	@RequestMapping("moremcboard")
 	public ModelAndView mcBoard(@RequestParam("page")int page) {
 		
 		totalRecord=boardInter.totalCount();
@@ -50,17 +50,13 @@ public class MCBoardController {
 		
 		System.out.println("MCBoardController: 호출 완료");
 		System.out.println("MCBoardController: 0번 인덱스 자료 본문 확인 "+mcList.get(0).getMc_content());
-		ModelAndView andView=new ModelAndView("mc_list");
-		andView.addObject("maincontentslist",result);
-		andView.addObject("totalpage",getTotalPage());
-		andView.addObject("page",page);
 		
 		ModelAndView moreView=new ModelAndView("more_mc_list");
 		moreView.addObject("maincontentslist",result);
 		moreView.addObject("totalpage",getTotalPage());
 		moreView.addObject("page",page);
 		
-		return andView;
+		return moreView;
 	}
 }
 

@@ -65,7 +65,7 @@ public class MCWriteController {
 
 		if(result) {
 			System.out.println("mcwrite_post: 회원정보 입력 완료");
-			return "redirect:/mcboard";	//추가 후 리스트로 이동
+			return "redirect:/mcboard?page=1";	//추가 후 리스트로 이동
 		}
 		else
 			return "redirect:/error.jsp";

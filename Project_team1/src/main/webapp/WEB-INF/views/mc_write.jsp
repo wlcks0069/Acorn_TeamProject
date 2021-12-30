@@ -55,7 +55,7 @@
 			<tr>
 				<td colspan="2" style="text-align: center;">
 				<input type="button" value="등록" id="btnAdd"> 
-				<input id="listBtn"	type="button" value="목록" onclick="location.href='mcboard'">
+				<input id="listBtn"	type="button" value="목록" onclick="location.href='mcboard?page=1'">
 				</td>opacity
 			</tr>
 		</table>

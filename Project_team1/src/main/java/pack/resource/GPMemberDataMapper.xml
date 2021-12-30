@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>	
 		
 	<!-- 6. 회원 번호 구하기 -->
-	<select id="currentMaxnum" resultType="integer">
+	<select id="gpmcurrentMaxnum" resultType="integer">
 		select max(mem_no) from gpmember
 	</select>
 			

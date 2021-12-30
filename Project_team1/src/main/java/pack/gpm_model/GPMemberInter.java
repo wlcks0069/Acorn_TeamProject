@@ -16,4 +16,5 @@ public interface GPMemberInter {
 	
 	int currentMaxnum();
 	boolean isExist(String email);
+	
 }
