@@ -12,7 +12,16 @@
 		width: 500px;
 		text-align: center;
 	}
+	
 </style>
+<script type="text/javascript">
+	window.onload = function(){
+		document.querySelector("#btnLike").onclick = chkfunc;
+	}
+	function chkfunc(){
+		document.getElementById("imgId").src = "./resources/images/like.PNG";
+	}
+</script>
 </head>
 <body>
 	<div>
@@ -31,7 +40,7 @@
 					<tr>
 						<th>${maincontent.mc_date }</th>
 						<td>${maincontent.mc_comment }</td>
-						<td>${maincontent.mc_like }</td>
+						<td><button id="btnLike" type="button"><img id="imgId" src="./resources/images/dislike.PNG" width="20" height="20"> ${maincontent.mc_like }</button></td>
 					</tr>
 				</c:forEach>
 			</tbody>
