@@ -26,5 +26,9 @@
 	<context:component-scan base-package="pack.gpm_controller" />
 	<context:component-scan base-package="pack.mc_model" />
 	<context:component-scan base-package="pack.mc_controller" />
+	<context:component-scan base-package="pack.pp_model" />
+	<context:component-scan base-package="pack.pp_controller" />
+	<context:component-scan base-package="pack.cm_model" />
+	<context:component-scan base-package="pack.cm_controller" />
 	
 </beans:beans>
