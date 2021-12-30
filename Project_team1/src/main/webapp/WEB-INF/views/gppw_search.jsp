@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기</title>
+<title>비밀번호 찾기</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -121,12 +121,16 @@ body {
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6 mb-3">
+						<div class="col-md-7 mb-3">
 							<label class="fw-bold">이 시대가 낳은 최고의 교육자 이름을 쓰세요</label> <input
 								class="form-control" type="text" name="buttering">
 						</div>
 					</div>
-					<input type="button" value="비밀번호 찾기" id="pw_search">
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<input class="form-control btn btn-primary fw-bold" type="button" value="비밀번호 찾기" id="pw_search">
+						</div>
+					</div>	
 				</form>
 			</div>
 		</div>
