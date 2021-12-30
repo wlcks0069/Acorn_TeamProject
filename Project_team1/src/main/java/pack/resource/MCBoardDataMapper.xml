@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 3. 신규 글 작성을 위한 정보 기입 구문-->	
 	<insert id="mcWrite" parameterType="mcbean">
-		insert into gpmainboard values(#{mc_no},#{mem_nick},#{mem_email},#{mc_content},#{mc_color},#{mc_brightness},#{mc_like},#{mc_comment},#{mc_date})
+		insert into gpmainboard values(#{mc_no},#{mem_nick},#{mem_email},#{mc_content},#{mc_color},#{mc_brightness},#{mc_like},#{mc_comment},sysdate)
 	</insert>
 		
 	<!-- 4. 글 상세보기 -->	
@@ -58,6 +58,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="securecode" parameterType="string" resultType="String">
 		select mem_email from gpmainboard where mc_no=#{selectednum}
 	</select>	
+	
+	
 </mapper>
 
 

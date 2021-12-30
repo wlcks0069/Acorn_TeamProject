@@ -43,6 +43,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="loginhelper" parameterType="string" resultType="string">
 		select mem_pwd from gpmember where mem_email=#{gpmEmail}
 	</select>		
+	
+	<!-- 9. 이메일을 활용해 닉네임을 얻어내는 구문 -->
+	<select id="getnickbyemail" parameterType="String" resultType="String">
+		select mem_nick from gpmember where mem_email=#{gpmEmail}
+	</select>
 </mapper>
 
 
