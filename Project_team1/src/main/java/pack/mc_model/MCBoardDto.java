@@ -2,7 +2,7 @@ package pack.mc_model;
 
 public class MCBoardDto {
 	private int mc_no, mc_brightness, mc_like, mc_comment;
-	private String mem_nick, mem_email, mc_content, mc_color;
+	private String mem_nick, mem_email, mc_content, mc_color, mc_date;
 	
 	public int getMc_no() {
 		return mc_no;
@@ -51,6 +51,12 @@ public class MCBoardDto {
 	}
 	public void setMc_color(String mc_color) {
 		this.mc_color = mc_color;
+	}
+	public String getMc_date() {
+		return mc_date;
+	}
+	public void setMc_date(String mc_date) {
+		this.mc_date = mc_date;
 	}
 	
 	

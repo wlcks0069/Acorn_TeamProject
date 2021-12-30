@@ -1,8 +1,43 @@
 package pack.mc_controller;
 
+import java.util.Calendar;
+
 public class MCBoardBean {
 	private int mc_no, mc_brightness, mc_like, mc_comment;
-	private String mem_nick, mem_email, mc_content, mc_color;
+	private String mem_nick, mem_email, mc_content, mc_color, mc_date;
+	private String searchParam, searchValue;
+	
+	public String getSearchParam() {
+		return searchParam;
+	}
+
+	public void setSearchParam(String searchParam) {
+		this.searchParam = searchParam;
+	}
+
+	public String getSearchValue() {
+		return searchValue;
+	}
+
+	public void setSearchValue(String searchValue) {
+		this.searchValue = searchValue;
+	}
+	
+	public void setMc_date() {
+	Calendar calender=Calendar.getInstance();
+	int year=calender.get(Calendar.YEAR);
+	int month=calender.get(Calendar.MONTH)+1;
+	int day=calender.get(Calendar.DATE);
+	this.mc_date=year+"-"+month+"-"+day;
+	}
+	
+	public String getMc_date() {
+		return mc_date;
+	}
+
+	public void setMc_date(String mc_date) {
+		this.mc_date = mc_date;
+	}
 
 	public int getMc_no() {
 		return mc_no;

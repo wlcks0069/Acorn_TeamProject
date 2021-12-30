@@ -77,8 +77,8 @@ public class GPMemberImpl extends SqlSessionDaoSupport implements GPMemberInter{
 
 	@Override
 	public int currentMaxnum() {											//insert시 번호 자동증가를 위해 현 테이블에서 가장 큰 번호 얻기
-		if(getSqlSession().selectOne("currentMaxnum")==null) return 0;
-		return getSqlSession().selectOne("currentMaxnum");
+		if(getSqlSession().selectOne("gpmcurrentMaxnum")==null) return 0;
+		return getSqlSession().selectOne("gpmcurrentMaxnum");
 	}
 
 	@Override
@@ -112,6 +112,12 @@ public class GPMemberImpl extends SqlSessionDaoSupport implements GPMemberInter{
 			return false;
 		}
 
+	}
+
+	@Override
+	public String getNick(String email) {
+		// 이메일을 통해 닉네임 얻기
+		return getSqlSession().selectOne("getnickbyemail",email);
 	}
 
 }

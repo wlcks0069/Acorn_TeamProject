@@ -24,13 +24,13 @@ public class SignUpController {
 		System.out.println("SignUpController: writeSubmit 호출 완료");
 		bean.setGpmDate();
 		System.out.println("SignUpController: bean을 통한 메소드 setGpmDate 호출 완료");
-		System.out.println("이름: "+bean.getGpmName());
-		System.out.println("성별: "+bean.getGpmGender());
-		System.out.println("나이: "+bean.getGpmAge());
-		System.out.println("이메일: "+bean.getGpmEmail());
-		System.out.println("닉네임: "+bean.getGpmNick());
-		System.out.println("비밀번호: "+bean.getGpmPwd());
-		System.out.println("입력일시: "+bean.getGpmDate());
+		System.out.println("SignUpController: 이름: "+bean.getGpmName());
+		System.out.println("SignUpController: 성별: "+bean.getGpmGender());
+		System.out.println("SignUpController: 나이: "+bean.getGpmAge());
+		System.out.println("SignUpController: 이메일: "+bean.getGpmEmail());
+		System.out.println("SignUpController: 닉네임: "+bean.getGpmNick());
+		System.out.println("SignUpController: 비밀번호: "+bean.getGpmPwd());
+		System.out.println("SignUpController: 입력일시: "+bean.getGpmDate());
 		System.out.println("SignUpController: setter를 통해 미리 저장된 인수들 확인 완료");
 
 
