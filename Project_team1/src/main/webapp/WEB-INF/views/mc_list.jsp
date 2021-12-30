@@ -41,6 +41,8 @@
 						<th>${maincontent.mc_date }</th>
 						<td>${maincontent.mc_comment }</td>
 						<td><button id="btnLike" type="button"><img id="imgId" src="./resources/images/dislike.PNG" width="20" height="20"> ${maincontent.mc_like }</button></td>
+						<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment } comments</a></td>
+						<td>${maincontent.mc_like } likes</td>
 					</tr>
 				</c:forEach>
 			</tbody>

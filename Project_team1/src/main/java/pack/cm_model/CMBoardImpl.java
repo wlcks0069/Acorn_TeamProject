@@ -46,6 +46,7 @@ public class CMBoardImpl extends SqlSessionDaoSupport implements CMBoardInter{
 
 		if (result > 0) {
 			System.out.println("cmWrite: 신규 글 작성 완료");
+			getSqlSession().update("mcCommentCount",cmbean.getMc_no());
 			return true;
 		} else {
 			System.out.println("cmWrite: 글작성 실패 (최종 단계 확인 필요)");

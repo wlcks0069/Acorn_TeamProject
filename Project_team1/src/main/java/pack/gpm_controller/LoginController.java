@@ -23,7 +23,7 @@ public class LoginController {
 		if(session.getAttribute("idkey")==null) {
 			return "redirect:/index.jsp";	//로그인 안한 경우 초기화면으로 되돌려보냄
 		} else {
-			return "redirect:mcboard";	//로그인 한 경우
+			return "redirect:mcboard?page=1";	//로그인 한 경우
 		}
 	}
 	
