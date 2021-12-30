@@ -13,7 +13,7 @@
 <h2>Project GP</h2>
 <form action="login" method="post">
 	아이디: <input type="text" name="id"><br>
-	비밀번호: <input type="text" name="pwd"><br>
+	비밀번호: <input type="password" name="pwd"><br>
 	<br>
 	<input type="submit" value="로그인"><br>			<!-- LoginController를 통해 작업 수행 지시 (POST)-->
 </form>
