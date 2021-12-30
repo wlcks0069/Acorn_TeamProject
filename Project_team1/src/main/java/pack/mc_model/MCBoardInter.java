@@ -17,6 +17,8 @@ public interface MCBoardInter {
 	boolean mcLikeCount(int selectedContentNumber);
 	boolean mcCommentCount(int selectedContentNumber);
 	
+	boolean mcComment(MCBoardBean bean);
+	
 	int currentMaxnum();
 	int totalCount();
 	String securecodeforUporDel(int selectedContentNumber);

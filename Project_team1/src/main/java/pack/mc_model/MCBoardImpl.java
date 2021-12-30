@@ -125,4 +125,10 @@ public class MCBoardImpl extends SqlSessionDaoSupport implements MCBoardInter{
 		// 글 작성자만 수정 및 삭제를 할 수 있도록 해주는 구문
 		return getSqlSession().selectOne("securecode",selectednum);
 	}
+
+	@Override
+	public boolean mcComment(MCBoardBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
