@@ -19,9 +19,9 @@ public class CMBoardImpl extends SqlSessionDaoSupport implements CMBoardInter{
 	}
 
 	@Override
-	public ArrayList<CMBoardDto> getList() {
+	public ArrayList<CMBoardDto> getList(String mc_no) {
 		// 전체 댓글 리스트 획득
-		return (ArrayList)getSqlSession().selectList("totalCMList");
+		return (ArrayList)getSqlSession().selectList("cmNoSearch", mc_no);
 	}
 
 	@Override

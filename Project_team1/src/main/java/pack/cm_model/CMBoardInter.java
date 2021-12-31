@@ -6,7 +6,7 @@ import pack.cm_controller.CMBoardBean;
 
 public interface CMBoardInter {
 
-	ArrayList<CMBoardDto> getList();
+	ArrayList<CMBoardDto> getList(String mc_no);
 	ArrayList<CMBoardDto> getSearch(CMBoardDto bean);
 	
 	boolean cmWrite(CMBoardBean bean);

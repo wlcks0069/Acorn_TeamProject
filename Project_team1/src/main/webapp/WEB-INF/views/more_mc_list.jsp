@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:forEach var="maincontent" items="${maincontentslist}">
+<c:forEach var="maincontent" items="${maincontentslist}"
+	varStatus="status">
 	<tr>
 		<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
 		<th>No.${maincontent.mc_no}</th>
@@ -12,12 +13,19 @@
 			style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
 	</tr>
 	<tr>
-		<th>${maincontent.mc_date }</th>
+		<td>${maincontent.mc_date }</td>
 		<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment }
 				comments</a></td>
-		<td><button id="btnLike" type="button">
-				<img id="imgId" src="./resources/images/dislike.PNG" width="20"
-					height="20"> ${maincontent.mc_like }
+		<td><button id="btnLike${status.index }" type="button">
+				<img id="imgId${status.index }" src="./resources/images/dislike.PNG"
+					width="20" height="20"> ${maincontent.mc_like }
 			</button></td>
 	</tr>
+	<c:forEach var="cmcontent" items="${cmList }">
+		<tr>
+			<td>${cmcontent.mem_nick }</td>
+			<td>${cmcontent.cm_commentcontent }</td>
+			<td>${cmcontent.cm_date }</td>
+		</tr>
+	</c:forEach>
 </c:forEach>

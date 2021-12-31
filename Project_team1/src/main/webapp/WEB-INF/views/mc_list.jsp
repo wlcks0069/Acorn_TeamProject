@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	System.out.println(session.getAttribute("numList"));
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +23,8 @@
 		<a href="mcwrite">글쓰기</a>
 		<table>
 			<tbody>
-				<c:forEach var="maincontent" items="${maincontentslist}">
+				<c:forEach var="maincontent" items="${maincontentslist}"
+					varStatus="status">
 					<tr>
 						<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
 						<th>No.${maincontent.mc_no}</th>
@@ -30,14 +34,22 @@
 							style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
 					</tr>
 					<tr>
-						<th>${maincontent.mc_date }</th>
+						<td>${maincontent.mc_date }</td>
 						<td><a href="cmcomment?mc_no=${maincontent.mc_no}">${maincontent.mc_comment }
 								comments</a></td>
-						<td><button id="btnLike" type="button">
-								<img id="imgId" src="./resources/images/dislike.PNG" width="20"
-									height="20"> ${maincontent.mc_like }
+						<td><button id="btnLike${status.index }" type="button">
+								<img id="imgId${status.index }"
+									src="./resources/images/dislike.PNG" width="20" height="20">
+								${maincontent.mc_like }
 							</button></td>
 					</tr>
+					<c:forEach var="cmcontent" items="${cmList }">
+						<tr>
+							<td>${cmcontent.mem_nick }</td>
+							<td>${cmcontent.cm_commentcontent }</td>
+							<td>${cmcontent.cm_date }</td>
+						</tr>
+					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>
@@ -46,12 +58,23 @@
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-		window.onload = function(){
-			document.querySelector("#btnLike").onclick = chkfunc;
+	
+		for(let i=0; i<1000000; i++){
+			$(function(){
+				$("#btnLike"+i).on("click",function(){
+					
+					console.log("clicked");
+					if($("#imgId"+i).attr("src")==="./resources/images/dislike.PNG"){
+						$("#imgId"+i).attr("src","./resources/images/like.PNG");
+					}else{
+						$("#imgId"+i).attr("src","./resources/images/dislike.PNG");
+					}
+				});
+			});
 		}
-		function chkfunc(){
-			document.getElementById("imgId").src = "./resources/images/like.PNG";
-		}
+		
+		
+		
 	
 		//페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.
 		let currentPage=${page};

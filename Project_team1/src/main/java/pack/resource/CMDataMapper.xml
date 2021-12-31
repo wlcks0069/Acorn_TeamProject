@@ -48,6 +48,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="cmCount" resultType="integer">
 		select count(cm_no) from commentdb where mc_no=#{mc_no}
 	</select>		
+	
+	<!-- 11. 글 번호로 코멘트 데이터 가져오기 -->	
+	<select id="cmNoSearch" parameterType="string" resultType="cmbean">
+		select * from commentdb where mc_no=#{mc_no} order by cm_no desc
+	</select>	
 </mapper>
 
 
