@@ -23,7 +23,7 @@ public class LoginController {
 		if(session.getAttribute("idkey")==null) {
 			return "redirect:/index.jsp";	//로그인 안한 경우 초기화면으로 되돌려보냄
 		} else {
-			return "redirect:/gpmain.jsp";	//로그인 한 경우
+			return "redirect:mcboard?page=1";	//로그인 한 경우
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class LoginController {
 		
 		if(gpmInter.login(id, pwd)) {
 			session.setAttribute("idkey", id);
-			return "redirect:/gpmain.jsp";	//로그인 한 경우
+			return "redirect:mcboard?page=1";	//로그인 한 경우
 		} else {
 			return "redirect:/error.jsp";	//로그인 망한 경우
 		}

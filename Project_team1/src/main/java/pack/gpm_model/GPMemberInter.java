@@ -12,7 +12,9 @@ public interface GPMemberInter {
 	boolean login(String email, String pwd);
 	String searchID(GPMemberBean gpmbean);
 	String searchPW(GPMemberBean gpmbean);
+	String getNick(String email);
 	
 	int currentMaxnum();
 	boolean isExist(String email);
+	
 }

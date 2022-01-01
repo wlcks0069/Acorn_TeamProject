@@ -11,10 +11,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="pack.gpm_model.GPMemberDto" alias="gpmdto" />
 		<typeAlias type="pack.mc_controller.MCBoardBean" alias="mcbean" />
 		<typeAlias type="pack.mc_model.MCBoardDto" alias="mcdto" />
+		<typeAlias type="pack.pp_controller.PPBean" alias="ppbean" />
+		<typeAlias type="pack.pp_model.PPDto" alias="ppdto" />
+		<typeAlias type="pack.cm_controller.CMBoardBean" alias="cmbean" />
+		<typeAlias type="pack.cm_model.CMBoardDto" alias="cmdto" />
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="pack/resource/GPMemberDataMapper.xml" />
 		<mapper resource="pack/resource/MCBoardDataMapper.xml" />
+		<mapper resource="pack/resource/PPDataMapper.xml" />
+		<mapper resource="pack/resource/CMDataMapper.xml" />
 	</mappers>
 </configuration>

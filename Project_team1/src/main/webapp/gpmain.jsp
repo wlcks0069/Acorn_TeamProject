@@ -11,6 +11,6 @@
 
 우와
 <br>
-<a href="mcboard">게시판</a>
+<a href="mcboard?page=1">게시판</a>
 </body>
 </html>

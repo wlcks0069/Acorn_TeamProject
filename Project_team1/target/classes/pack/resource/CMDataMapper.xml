@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cmdev">
+	<!-- 1. 전체 댓글 리스트 출력 -->
+	<select id="totalCMList" resultType="cmdto">
+		select * from commentdb order by cm_no desc
+	</select>
+	
+	<!-- 2. 특정 파라미터에서 조건값을 만족하는 댓글 리스트 출력 -->	
+	<select id="specificCMList" parameterType="cmbean" resultType="cmdto">
+		select * from commentdb where ${searchParam} like '%' || #{searchValue} ||'%'
+	</select>
+	
+	<!-- 3. 신규 댓글 작성을 위한 정보 기입 구문-->	
+	<insert id="cmWrite" parameterType="cmbean">
+		insert into commentdb values(#{cm_no},#{mc_no},#{mem_nick},#{mem_email},#{cm_commentcontent},sysdate)
+	</insert>
+	
+	<!-- 4. 댓글 수정을 위한 정보 기입 구문 -->	
+	<update id="cmUpdate" parameterType="cmbean">
+		update commentdb set cm_commentcontent=#{cm_commentcontent} where cm_no=#{cm_no}
+	</update>
+			
+	<!-- 6. 글 삭제 구문 -->	
+	<delete id="cmDelete" parameterType="cmbean">
+		delete from commentdb where cm_no=#{selectednum}
+	</delete>		
+			
+	<!-- 7. 글 번호 구하는 구문 (글 번호 자동 증가를 위함) -->
+	<select id="cmcurrentMaxnum" resultType="integer">
+		select max(cm_no) from commentdb
+	</select>		
+			
+	<!-- 8. 글 개수 구하는 구문 (paging 처리) -->		
+	<select id="cmtotalCnt" resultType="integer">
+		select count(*) from commentdb
+	</select>		
+					
+	<!-- 9. 작성자를 반환하는 구문 (글 보안 작업) -->
+	<select id="cmsecurecode" parameterType="string" resultType="String">
+		select mem_email from commentdb where cm_no=#{selectednum}
+	</select>
+		
+	<!-- 10. 댓글 수 갱신 -->	
+	<select id="cmCount" resultType="integer">
+		select count(cm_no) from commentdb where mc_no=#{mc_no}
+	</select>		
+	
+	<!-- 11. 글 번호로 코멘트 데이터 가져오기 -->	
+	<select id="cmNoSearch" parameterType="string" resultType="cmdto">
+		select * from commentdb where mc_no=#{mc_no} order by cm_no desc
+	</select>	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
