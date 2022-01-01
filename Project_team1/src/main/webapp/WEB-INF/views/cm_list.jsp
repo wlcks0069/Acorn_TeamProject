@@ -11,7 +11,16 @@
 	height: 500px;
 	width: 500px;
 	text-align: center;
+	border-radius:10%;
+	font-size:1.5rem;
+	font-weight:bold;
 }
+
+a {
+	color:black;
+	text-decoration:none;
+}
+	
 </style>
 </head>
 <body>
@@ -19,6 +28,10 @@
 	<table>
 		<tr>
 			<th colspan="3" id="content" style="background-color: ${color}">${mc_content }</th>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td><a href="like?mc_no=${mc_no }">${like } like</a></td>
 		</tr>
 		<c:forEach var="cmcontent" items="${cmcontentslist }">
 			<tr>

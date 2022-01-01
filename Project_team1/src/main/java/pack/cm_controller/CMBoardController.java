@@ -54,11 +54,11 @@ public class CMBoardController {
 		MCBoardDto searchedData=boardInter.getDetail(mc_no);
 		String searchedContent=searchedData.getMc_content();
 		String color=searchedData.getMc_color();
+		int like=searchedData.getMc_like();
 		ArrayList<CMBoardDto> cmList = cmBoardInter.getList(mc_no);
 		ArrayList<CMBoardDto> result = getListData(cmList, page);
 
 		System.out.println("CMBoardController: 호출 완료");
-		System.out.println("CMBoardController: 0번 인덱스 자료 본문 확인 " + cmList.get(0).getCm_commentcontent());
 
 		ModelAndView andView = new ModelAndView("cm_list");
 		andView.addObject("cmcontentslist", result);
@@ -67,6 +67,7 @@ public class CMBoardController {
 		andView.addObject("mc_content",searchedContent);
 		andView.addObject("color",color);
 		andView.addObject("mc_no",mc_no);
+		andView.addObject("like",like);
 		return andView;
 	}
 }

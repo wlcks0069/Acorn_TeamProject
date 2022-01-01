@@ -11,6 +11,17 @@
 	height: 500px;
 	width: 500px;
 	text-align: center;
+	border-radius:10%;
+}
+
+a {
+	color:black;
+	text-decoration:none;
+}
+
+#letterStyle{
+	font-size:1.5rem;
+	font-weight:bold;
 }
 </style>
 </head>
@@ -28,17 +39,14 @@
 					</tr>
 					<tr>
 						<td id="content" colspan="3"
-							style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
+							style="background-color: ${maincontent.mc_color }"><a
+							href="cmboard?page=1&&mc_no=${maincontent.mc_no}" id="letterStyle">${maincontent.mc_content }</a>
+						</td>
 					</tr>
 					<tr>
 						<td>${maincontent.mc_date }</td>
-						<td><a href="cmboard?page=1&&mc_no=${maincontent.mc_no}">${maincontent.mc_comment }
-								comments</a></td>
-						<td><button id="btnLike${status.index }" type="button">
-								<img id="imgId${status.index }"
-									src="./resources/images/dislike.PNG" width="20" height="20">
-								${maincontent.mc_like }
-							</button></td>
+						<td>${maincontent.mc_comment }comments</td>
+						<td>${maincontent.mc_like }likes</td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -48,23 +56,6 @@
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-	
-		for(let i=0; i<1000000; i++){
-			$(function(){
-				$("#btnLike"+i).on("click",function(){
-					
-					console.log("clicked");
-					if($("#imgId"+i).attr("src")==="./resources/images/dislike.PNG"){
-						$("#imgId"+i).attr("src","./resources/images/like.PNG");
-					}else{
-						$("#imgId"+i).attr("src","./resources/images/dislike.PNG");
-					}
-				});
-			});
-		}
-		
-		
-		
 	
 		//페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.
 		let currentPage=${page};
@@ -106,6 +97,7 @@
 				});
 			}
 		});
+		
 	</script>
 </body>
 </html>
