@@ -13,7 +13,7 @@ public interface MCBoardInter {
 	MCBoardDto getDetail(String selectedContentNumber);
 	boolean mcWrite(MCBoardBean bean);
 	boolean mcUpdate(MCBoardBean bean);
-	boolean mcDelete(int selectedContentNumber);
+	boolean mcDelete(String selectedContentNumber);
 	boolean mcLikeCount(int selectedContentNumber);
 	boolean mcCommentCount(int selectedContentNumber);
 	

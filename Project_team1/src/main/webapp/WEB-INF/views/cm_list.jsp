@@ -11,16 +11,15 @@
 	height: 500px;
 	width: 500px;
 	text-align: center;
-	border-radius:10%;
-	font-size:1.5rem;
-	font-weight:bold;
+	border-radius: 10%;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 a {
-	color:black;
-	text-decoration:none;
+	color: black;
+	text-decoration: none;
 }
-	
 </style>
 </head>
 <body>
@@ -42,6 +41,18 @@ a {
 		</c:forEach>
 	</table>
 	<a href="cmcomment?mc_no=${mc_no }">댓글 쓰기</a>
-	<a href="mcboard?page=1">목록 보기</a>
+	<a href="mcboard?page=${mc_page }">목록 보기</a>
+	<a href="mcupdate?mc_no=${mc_no }">수정하기</a>
+	<a href="mcdelete?mc_no=${mc_no } ">삭제하기</a>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+

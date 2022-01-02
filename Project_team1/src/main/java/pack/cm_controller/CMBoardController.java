@@ -24,7 +24,7 @@ public class CMBoardController {
 	private CMBoardInter cmBoardInter;
 
 	private int totalRecord; // 전체 레코드 수
-	private int pageList = 10; // 한 페이지 당 출력 행 수
+	private int pageList = 20; // 한 페이지 당 출력 행 수
 	private int totalPage; // 전체 페이지 수
 
 	public ArrayList<CMBoardDto> getListData(ArrayList<CMBoardDto> list, int page) { // 12, 1
@@ -48,13 +48,14 @@ public class CMBoardController {
 	}
 
 	@RequestMapping(value = "cmboard", method = RequestMethod.GET)
-	public ModelAndView cmBoard(@RequestParam("page") int page, @RequestParam("mc_no")String mc_no) {
-		
+	public ModelAndView cmBoard(@RequestParam("page") int page, @RequestParam("mc_no") String mc_no,
+			@RequestParam("mc_page") int mc_page) {
+
 		totalRecord = cmBoardInter.totalCount();
-		MCBoardDto searchedData=boardInter.getDetail(mc_no);
-		String searchedContent=searchedData.getMc_content();
-		String color=searchedData.getMc_color();
-		int like=searchedData.getMc_like();
+		MCBoardDto searchedData = boardInter.getDetail(mc_no);
+		String searchedContent = searchedData.getMc_content();
+		String color = searchedData.getMc_color();
+		int like = searchedData.getMc_like();
 		ArrayList<CMBoardDto> cmList = cmBoardInter.getList(mc_no);
 		ArrayList<CMBoardDto> result = getListData(cmList, page);
 
@@ -64,10 +65,11 @@ public class CMBoardController {
 		andView.addObject("cmcontentslist", result);
 		andView.addObject("totalpage", getTotalPage());
 		andView.addObject("page", page);
-		andView.addObject("mc_content",searchedContent);
-		andView.addObject("color",color);
-		andView.addObject("mc_no",mc_no);
-		andView.addObject("like",like);
+		andView.addObject("mc_content", searchedContent);
+		andView.addObject("color", color);
+		andView.addObject("mc_no", mc_no);
+		andView.addObject("like", like);
+		andView.addObject("mc_page",mc_page);
 		return andView;
 	}
 }

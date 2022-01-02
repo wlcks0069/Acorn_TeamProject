@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 			
 	<!-- 6. 글 삭제 구문 -->	
-	<delete id="mcDelete" parameterType="mcbean">
+	<delete id="mcDelete" parameterType="string">
 		delete from gpmainboard where mc_no=#{selectednum}
 	</delete>		
 				

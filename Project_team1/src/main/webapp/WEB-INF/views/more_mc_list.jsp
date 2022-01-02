@@ -10,15 +10,13 @@
 	</tr>
 	<tr>
 		<td id="content" colspan="3"
-			style="background-color: ${maincontent.mc_color }">${maincontent.mc_content }</td>
+			style="background-color: ${maincontent.mc_color }"><a
+			href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
+		</td>
 	</tr>
 	<tr>
 		<td>${maincontent.mc_date }</td>
-		<td><a href="cmboard?page=1&&mc_no=${maincontent.mc_no}">${maincontent.mc_comment }
-				comments</a></td>
-		<td><button id="btnLike${status.index }" type="button">
-				<img id="imgId${status.index }" src="./resources/images/dislike.PNG"
-					width="20" height="20"> ${maincontent.mc_like }
-			</button></td>
+		<td>${maincontent.mc_comment }comments</td>
+		<td>${maincontent.mc_like }likes</td>
 	</tr>
 </c:forEach>

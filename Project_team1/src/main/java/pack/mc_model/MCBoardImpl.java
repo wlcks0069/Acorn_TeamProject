@@ -73,7 +73,7 @@ public class MCBoardImpl extends SqlSessionDaoSupport implements MCBoardInter{
 	}
 
 	@Override
-	public boolean mcDelete(int selectednum) {
+	public boolean mcDelete(String selectednum) {
 		// 글 삭제
 		try {
 			int result = getSqlSession().delete("mcDelete", selectednum);

@@ -60,7 +60,7 @@ public class CMCommentController {
 		
 		if(result) {
 			System.out.println("cmcomment_post: 댓글 입력 완료");
-			return "redirect:/cmboard?page=1&&mc_no="+mc_no;
+			return "redirect:/cmboard?page=1&&mc_no="+mc_no+"&&mc_page=1";
 			//디테일로 이동하지 않고 보드로 이동하는 것으로 확인
 		}
 		else

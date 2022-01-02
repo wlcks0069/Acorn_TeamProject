@@ -27,7 +27,7 @@ a {
 </head>
 <body>
 	<div>
-		<h1>Git Pen</h1>
+		<h1><a href="mcboard?page=1">Git Pen</a></h1>
 		<a href="mcwrite">글쓰기</a>
 		<table>
 			<tbody>
@@ -40,7 +40,7 @@ a {
 					<tr>
 						<td id="content" colspan="3"
 							style="background-color: ${maincontent.mc_color }"><a
-							href="cmboard?page=1&&mc_no=${maincontent.mc_no}" id="letterStyle">${maincontent.mc_content }</a>
+							href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
 						</td>
 					</tr>
 					<tr>
@@ -54,7 +54,7 @@ a {
 	</div>
 
 
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" ></script>
 	<script>
 	
 		//페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.
@@ -64,6 +64,7 @@ a {
 	
 		//웹브라우저의 창을 스크롤 할때 마다 호출되는 함수 등록
 		$(window).on("scroll", function(){
+			console.log("scrolled");
 			//위로 스크롤 된 길이
 			let scrollTop=$(window).scrollTop();
 			//웹 브라우저 창의 높이
@@ -76,7 +77,7 @@ a {
 			if(isBottom){
 				console.log("hit!!");
 				//만일 현재 페이지가 마지막 페이지이거나 아직 로딩중이라면
-				if(currentPage==${totalpage}||isLoading){
+				if(currentPage===${totalpage}||isLoading){
 					return; //함수를 여기서 끝내기
 				}
 				//현재 로딩중이라는 상태로 바꿔준다.
