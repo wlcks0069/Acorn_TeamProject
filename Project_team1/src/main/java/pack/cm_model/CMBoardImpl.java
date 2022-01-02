@@ -66,7 +66,7 @@ public class CMBoardImpl extends SqlSessionDaoSupport implements CMBoardInter{
 	}
 
 	@Override
-	public boolean cmDelete(int selectednum) {
+	public boolean cmDelete(String selectednum) {
 		// 댓글 삭제
 		try {
 			int result = getSqlSession().delete("cmDelete", selectednum);

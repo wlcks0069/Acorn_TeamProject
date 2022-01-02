@@ -29,6 +29,7 @@ a {
 	<div>
 		<h1><a href="mcboard?page=1">Git Pen</a></h1>
 		<h5>${idkey} 로그인중</h5>
+		<a href="logout">로그아웃</a>
 		<a href="mcwrite">글쓰기</a>
 		<table>
 			<tbody>

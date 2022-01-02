@@ -11,7 +11,7 @@ public interface CMBoardInter {
 	
 	boolean cmWrite(CMBoardBean bean);
 	boolean cmUpdate(CMBoardBean bean);
-	boolean cmDelete(int selectedContentNumber);
+	boolean cmDelete(String selectedContentNumber);
 	
 	int cmCount(int mc_no);	//댓글 수 세기
 	

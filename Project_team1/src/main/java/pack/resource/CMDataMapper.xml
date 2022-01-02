@@ -25,8 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 			
 	<!-- 6. 글 삭제 구문 -->	
-	<delete id="cmDelete" parameterType="cmbean">
-		delete from commentdb where cm_no=#{selectednum}
+	<delete id="cmDelete" parameterType="string">
+		delete from commentdb where mc_no=#{selectednum}
 	</delete>		
 			
 	<!-- 7. 글 번호 구하는 구문 (글 번호 자동 증가를 위함) -->
@@ -40,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>		
 					
 	<!-- 9. 작성자를 반환하는 구문 (글 보안 작업) -->
-	<select id="cmsecurecode" parameterType="string" resultType="String">
+	<select id="cmsecurecode" parameterType="string" resultType="string">
 		select mem_email from commentdb where cm_no=#{selectednum}
 	</select>
 		
