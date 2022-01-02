@@ -58,6 +58,7 @@ public class CMBoardController {
 		int like = searchedData.getMc_like();
 		ArrayList<CMBoardDto> cmList = cmBoardInter.getList(mc_no);
 		ArrayList<CMBoardDto> result = getListData(cmList, page);
+		String email = searchedData.getMem_email();
 
 		System.out.println("CMBoardController: 호출 완료");
 
@@ -70,6 +71,7 @@ public class CMBoardController {
 		andView.addObject("mc_no", mc_no);
 		andView.addObject("like", like);
 		andView.addObject("mc_page",mc_page);
+		andView.addObject("mem_email", email);
 		return andView;
 	}
 }

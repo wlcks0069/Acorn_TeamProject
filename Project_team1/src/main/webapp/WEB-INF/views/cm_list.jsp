@@ -42,9 +42,11 @@ a {
 	</table>
 	<a href="cmcomment?mc_no=${mc_no }">댓글 쓰기</a>
 	<a href="mcboard?page=${mc_page }">목록 보기</a>
-	<a href="mcupdate?mc_no=${mc_no }">수정하기</a>
-	<a href="mcdelete?mc_no=${mc_no } ">삭제하기</a>
-
+	
+	<c:if test="${idkey == mem_email }">
+		<a href="mcupdate?mc_no=${mc_no }">수정하기</a>
+		<a href="mcdelete?mc_no=${mc_no } ">삭제하기</a>
+	</c:if>
 </body>
 </html>
 
