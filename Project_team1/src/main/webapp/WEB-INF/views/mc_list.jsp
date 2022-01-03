@@ -114,7 +114,7 @@ a.comment {
 							<tr>
 								<td id="content" colspan="3"
 									style="background-color: ${maincontent.mc_color }"><a
-									href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}"
+									href="cmboard?mc_no=${maincontent.mc_no}&&mc_page=${page}"
 									id="letterStyle">${maincontent.mc_content }</a></td>
 							</tr>
 							<tr>

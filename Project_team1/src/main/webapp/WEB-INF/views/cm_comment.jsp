@@ -15,62 +15,53 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <style>
+nav {
+	top: 0;
+	width: 100%;
+	background-color: #000000b3;
+	color: white;
+}
+
+.navBar {
+	color: white;
+	text-decoration: none;
+	padding-bottom: 10px;
+}
+
 body {
-	min-height: 100vh;
-	background: linear-gradient(45deg, Violet, Orange);
+	background-color: #fff2d6;
 }
 
-h2{
-text-align: center;
-}
-
-.input-form {
-	max-width: 680px;
-	margin-top: 80px;
-	padding: 32px;
-	background: #fff;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+#floatingTextarea {
+	border-radius: 3%;
 }
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="input-form-background row">
-			<div class="input-form col-md-12 mx-auto">
-				<h2 class="mb-3 fw-bold">코멘트 작성</h2>
-				<form action="cmcomment?mc_no=${mc_no }" method="post" name="cw">
-					<div class="row">
-						<div>
-							<div class="table table-borderless">
-								<table class="table table-borderless align-middle">
-									<tr>
-										<td class="fw-bold" colspan="1">닉네임</td>
-										<td colspan="1"><input type="text" name="mem_nick"
-											value="${usernick}" disabled></td>
-									</tr>
-									<tr>
-										<td class="fw-bold" colspan="1">코멘트</td>
-										<td colspan="1"><textarea maxlength="50" style="width:100%;"
-												rows="10" name="cm_commentcontent"></textarea></td>
-									</tr>
-									<tr>
-										<td colspan="2" style="text-align: center;"><input
-											type="button" value="등록" id="btnAdd" class="btn btn-dark">
-											<input id="listBtn" type="button" value="목록"
-											onclick="location.href='mcboard?page=1'" class="btn btn-dark"></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</form>
+	<nav>
+		<div>
+			<h1>
+				<a href="mcboard?page=1" class="navBar">Git Pen</a>
+			</h1>
+			<p>${idkey}님로그인중</p>
+			<div class="navBar">
+				<a href="mcboard?page=1" class="navBar">목록으로</a>
 			</div>
 		</div>
+	</nav>
+	<div class="container">
+		<h2 class="mb-3 fw-bold">코멘트 작성</h2>
+		<form action="cmcomment?mc_no=${mc_no }" method="post" name="cw">
+			<div>
+				<textarea maxlength="50" style="width: 100%;" rows="10"
+					name="cm_commentcontent" placeholder="Content here" id="floatingTextarea" class="form-control"></textarea>
+			</div>
+			<div style="text-align: center;">
+            <input type="button" class="btn btn-dark" value="등록" id="btnAdd">
+            <input id="listBtn" type="button" class="btn btn-dark" value="뒤로"
+               onclick="location.href='cmboard?mc_no=${mc_no}&&mc_page=1'">
+         </div>
+		</form>
 	</div>
 	<script type="text/javascript">
 		window.onload = function() {

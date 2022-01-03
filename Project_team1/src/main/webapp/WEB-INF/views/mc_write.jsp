@@ -71,7 +71,7 @@ body{
    <nav>
       <div>
          <h1>
-            <a href="mcboard?page=1" class="navBar">New Content</a>
+            <a href="mcboard?page=1" class="navBar">Git Pen</a>
          </h1>
          <p>${idkey}님 로그인중</p>
          <div class="navBar">
@@ -110,7 +110,7 @@ body{
                <option value=0>0%</option>
             </select>
          </div>
-         <div colspan="2" style="text-align: center;">
+         <div style="text-align: center;">
             <input type="button" class="btn btn-dark" value="등록" id="btnAdd">
             <input id="listBtn" type="button" class="btn btn-dark" value="목록"
                onclick="location.href='mcboard?page=1'">
