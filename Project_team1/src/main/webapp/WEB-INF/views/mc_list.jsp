@@ -23,14 +23,26 @@ a {
 	font-size:1.5rem;
 	font-weight:bold;
 }
+nav{
+position:-webkit-sticky;
+position:sticky;
+top:0;
+background-color:gray;
+}
 </style>
 </head>
 <body>
 	<div>
-		<h1><a href="mcboard?page=1">Git Pen</a></h1>
-		<h5>${idkey} 로그인중</h5>
-		<a href="logout">로그아웃</a>
-		<a href="mcwrite">글쓰기</a>
+		<nav>
+			<div>
+				<h1><a href="mcboard?page=1">Git Pen</a></h1>
+				${idkey} 로그인중
+				<div>
+					<a href="logout">로그아웃</a>
+					<a href="mcwrite">글쓰기</a>
+				</div>
+			</div>
+		</nav>
 		<table>
 			<tbody>
 				<c:forEach var="maincontent" items="${maincontentslist}"
