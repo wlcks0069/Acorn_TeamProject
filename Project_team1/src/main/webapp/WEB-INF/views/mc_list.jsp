@@ -15,20 +15,29 @@
 }
 
 a {
-	color:black;
+	color:white;
 	text-decoration:none;
 }
 
 #letterStyle{
 	font-size:1.5rem;
 	font-weight:bold;
+	color:black;
 }
 
 nav{
 position:-webkit-sticky;
 position:sticky;
 top:0;
+<<<<<<< HEAD
 background-color: #d3d3d3;
+=======
+background-color:#000000b3;
+color:white;
+}
+.navBar {
+	color:white;
+>>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 }
 
 table {
@@ -42,9 +51,9 @@ table {
 	<div>
 		<nav>
 			<div>
-				<h1><a href="mcboard?page=1">Git Pen</a></h1>
-				${idkey} 로그인중
-				<div>
+				<h1><a href="mcboard?page=1" class="navBar">Git Pen</a></h1>
+				<p>${idkey} 님 로그인중</p>
+				<div class="navBar">
 					<a href="logout">로그아웃</a>
 					<a href="mcwrite">글쓰기</a>
 				</div>
@@ -53,6 +62,7 @@ table {
 			<div id="body">
 				<c:forEach var="maincontent" items="${maincontentslist}"
 					varStatus="status">
+<<<<<<< HEAD
 				<div style="float: left; width: 33%;">
 					<table>
 						<tbody>
@@ -76,6 +86,26 @@ table {
 				</div>
 			</c:forEach>
 			</div>
+=======
+					<tr>
+						<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
+						<th>No.${maincontent.mc_no}</th>
+					</tr>
+					<tr>
+						<td id="content" colspan="3"
+							style="background-color: ${maincontent.mc_color }"><a
+							href="cmboard?mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
+						</td>
+					</tr>
+					<tr>
+						<td>${maincontent.mc_date }</td>
+						<td>${maincontent.mc_comment }comments</td>
+						<td>${maincontent.mc_like }likes</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+>>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 	</div>
 
 

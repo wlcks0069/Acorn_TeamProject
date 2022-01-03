@@ -18,6 +18,6 @@ public class MCLikeController {
 		
 		mcBoardInter.mcLikeCount(mc_no);
 		
-		return "redirect:/cmboard?page=1&&mc_no="+mc_no+"&&mc_page=1";
+		return "redirect:/cmboard?mc_no="+mc_no+"&&mc_page=1";
 	}
 }
