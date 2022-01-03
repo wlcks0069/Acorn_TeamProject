@@ -15,19 +15,24 @@
 }
 
 a {
-	color:black;
+	color:white;
 	text-decoration:none;
 }
 
 #letterStyle{
 	font-size:1.5rem;
 	font-weight:bold;
+	color:black;
 }
 nav{
 position:-webkit-sticky;
 position:sticky;
 top:0;
-background-color:gray;
+background-color:#000000b3;
+color:white;
+}
+.navBar {
+	color:white;
 }
 </style>
 </head>
@@ -35,9 +40,9 @@ background-color:gray;
 	<div>
 		<nav>
 			<div>
-				<h1><a href="mcboard?page=1">Git Pen</a></h1>
-				${idkey} 로그인중
-				<div>
+				<h1><a href="mcboard?page=1" class="navBar">Git Pen</a></h1>
+				<p>${idkey} 님 로그인중</p>
+				<div class="navBar">
 					<a href="logout">로그아웃</a>
 					<a href="mcwrite">글쓰기</a>
 				</div>
@@ -54,7 +59,7 @@ background-color:gray;
 					<tr>
 						<td id="content" colspan="3"
 							style="background-color: ${maincontent.mc_color }"><a
-							href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
+							href="cmboard?mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
 						</td>
 					</tr>
 					<tr>

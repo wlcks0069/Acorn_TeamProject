@@ -66,6 +66,7 @@
 		<ul>
 			<li><label for="">현재의 기분</label> <select name="mc_color">
 					<option value="-1">==색상==</option>
+					<option value="#C5E1A5">평온 / green</option>
 					<option value="#FFFC81">기쁨 / yellow</option>
 					<option value="#EB6363">화남 / red</option>
 					<option value="#A5C9E8">우울 / blue</option>
