@@ -16,9 +16,9 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <style>
-html {
+html{
 	font-family: 'Nanum Brush Script', cursive;
-	font-size: larger;
+	font-size:larger;
 }
 
 body {
@@ -104,7 +104,7 @@ a.comment {
 		<div id="body">
 			<c:forEach var="maincontent" items="${maincontentslist}"
 				varStatus="status">
-				<div style="float: left; width: 32%; margin-left:10px;">
+				<div style="float: left; width: 32%; margin-left: 10px;">
 					<table>
 						<tbody>
 							<tr>
