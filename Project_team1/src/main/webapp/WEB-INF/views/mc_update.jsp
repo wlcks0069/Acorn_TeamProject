@@ -71,7 +71,7 @@
 					<option value="#EB6363">화남 / red</option>
 					<option value="#A5C9E8">우울 / blue</option>
 					<option value="#DDBADE">무서움 / purple</option>
-					<option value="#E2E2E2">심심 / grey</option>
+					<option value="#bdbdbd">심심 / grey</option>
 			</select></li>
 			<li><label for="">기분의 정도</label> <select name="mc_brightness">
 					<option value="-1">==채도==</option>

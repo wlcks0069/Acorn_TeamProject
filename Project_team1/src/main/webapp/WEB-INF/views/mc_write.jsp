@@ -5,6 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>MC_Writer</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!----CSS link----->
+<link rel="stylesheet" href="style.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style type="text/css"></style>
+
 <script type="text/javascript">
 	window.onload = function() {
 		let btnAdd = document.querySelector("#btnAdd");
@@ -41,38 +52,41 @@
 	<form action="mcwrite?color=${mc_color.value }" method="post" name="mw">
 		<table>
 			<tr>
-				<td>닉네임</td>
-				<td><input type="text" name="mem_nick" value="${usernick}"
+				<td class="col-sm-6"><label for="firstName" class="form-label"><strong>닉네임</strong></label>
+					<input type="text" class="form-control" id="firstName"
+					placeholder="" name="mem_nick" value="${usernick}" required
+					disabled></td>
+
+				<td class="col-sm-6"><label for="firstName" class="form-label"><strong>이메일</strong></label>
+					<input type="text" class="form-control" id="firstName"
+					placeholder="" name="mem_email" value="${useremail}" required
 					disabled></td>
 			</tr>
 			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="mem_email" value="${useremail}"
-					disabled></td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td><textarea maxlength="300" cols="80" rows="30"
-						name="mc_content"></textarea></td>
+				<td class="col-sm-6" colspan="2"><textarea class="form-control"
+						maxlength="300" cols="80" rows="30" placeholder="내용입력"
+						name="mc_content" id="floatingTextarea"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center;"><input
-					type="button" value="등록" id="btnAdd"> <input id="listBtn"
-					type="button" value="목록" onclick="location.href='mcboard?page=1'">
-				</td>opacity
+					type="button" class="btn btn-primary" value="등록" id="btnAdd">
+					<input id="listBtn" type="button" class="btn btn-primary"
+					value="목록" onclick="location.href='mcboard?page=1'"></td>
 			</tr>
 		</table>
 		<ul>
-			<li><label for="">현재의 기분</label> <select name="mc_color">
+			<li><label for=""><strong>현재의 기분</strong></label> <select
+				name="mc_color">
 					<option value="-1">==색상==</option>
 					<option value="#C5E1A5">평온 / green</option>
 					<option value="#FFFC81">기쁨 / yellow</option>
 					<option value="#EB6363">화남 / red</option>
 					<option value="#A5C9E8">우울 / blue</option>
 					<option value="#DDBADE">무서움 / purple</option>
-					<option value="#E2E2E2">심심 / grey</option>
+					<option value="#bdbdbd">심심 / grey</option>
 			</select></li>
-			<li><label for="">기분의 정도</label> <select name="mc_brightness">
+			<li><label for=""><strong>기분의 정도</strong></label> <select
+				name="mc_brightness">
 					<option value="-1">==채도==</option>
 					<option value=100>100%</option>
 					<option value=75>75%</option>

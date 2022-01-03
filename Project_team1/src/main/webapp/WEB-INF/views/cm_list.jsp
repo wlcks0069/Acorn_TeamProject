@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Comments</title>
 <style>
+html{
+	font-family: 'Nanum Brush Script', cursive;
+	font-size:larger;
+}
+
 #content {
 	height: 500px;
 	width: 500px;
@@ -21,6 +26,9 @@ a {
 	text-decoration: none;
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
 <body>
 	<h3>comments</h3>
