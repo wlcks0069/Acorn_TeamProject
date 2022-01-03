@@ -31,10 +31,6 @@ body{
    background-color: #fff2d6;
 }
 
-#floatingTextarea{
-	border-radius: 3%;
-}
-
 </style>
 <script type="text/javascript">
    window.onload = function() {

@@ -31,10 +31,6 @@ nav {
 body {
 	background-color: #fff2d6;
 }
-
-#floatingTextarea {
-	border-radius: 3%;
-}
 </style>
 </head>
 <body>
