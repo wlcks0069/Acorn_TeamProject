@@ -27,7 +27,7 @@ public class MCBoardController {
 	private CMBoardInter cmBoardInter;
 	
 	private int totalRecord;		//전체 레코드 수
-	private int pageList=5;	//한 페이지 당 출력 행 수
+	private int pageList=6;	//한 페이지 당 출력 행 수
 	private int totalPage;		//전체 페이지 수
 	
 	public ArrayList<MCBoardDto> getListData(ArrayList<MCBoardDto> list, int page){	//12, 1

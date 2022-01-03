@@ -4,19 +4,25 @@
 
 <c:forEach var="maincontent" items="${maincontentslist}"
 	varStatus="status">
-	<tr>
-		<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
-		<th>No.${maincontent.mc_no}</th>
-	</tr>
-	<tr>
-		<td id="content" colspan="3"
-			style="background-color: ${maincontent.mc_color }"><a
-			href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}"
-			id="letterStyle">${maincontent.mc_content }</a></td>
-	</tr>
-	<tr>
-		<td>${maincontent.mc_date }</td>
-		<td>${maincontent.mc_comment }comments</td>
-		<td>${maincontent.mc_like }likes</td>
-	</tr>
+	<div style="float: left; width: 33%;">
+		<table>
+			<tbody>
+				<tr>
+					<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
+					<th>No.${maincontent.mc_no}</th>
+				</tr>
+				<tr>
+					<td id="content" colspan="3"
+						style="background-color: ${maincontent.mc_color }"><a
+						href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}"
+						id="letterStyle">${maincontent.mc_content }</a></td>
+				</tr>
+				<tr>
+					<td>${maincontent.mc_date }</td>
+					<td>${maincontent.mc_comment }comments</td>
+					<td>${maincontent.mc_like }likes</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </c:forEach>

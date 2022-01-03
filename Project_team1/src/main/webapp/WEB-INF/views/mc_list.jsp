@@ -23,12 +23,19 @@ a {
 	font-size:1.5rem;
 	font-weight:bold;
 }
+
 nav{
 position:-webkit-sticky;
 position:sticky;
 top:0;
-background-color:gray;
+background-color: #d3d3d3;
 }
+
+table {
+	margin-bottom:50px;
+	margin-left:auto;
+	margin-right:auto;
+} 
 </style>
 </head>
 <body>
@@ -43,28 +50,32 @@ background-color:gray;
 				</div>
 			</div>
 		</nav>
-		<table>
-			<tbody>
+			<div id="body">
 				<c:forEach var="maincontent" items="${maincontentslist}"
 					varStatus="status">
-					<tr>
-						<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
-						<th>No.${maincontent.mc_no}</th>
-					</tr>
-					<tr>
-						<td id="content" colspan="3"
-							style="background-color: ${maincontent.mc_color }"><a
-							href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
-						</td>
-					</tr>
-					<tr>
-						<td>${maincontent.mc_date }</td>
-						<td>${maincontent.mc_comment }comments</td>
-						<td>${maincontent.mc_like }likes</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				<div style="float: left; width: 33%;">
+					<table>
+						<tbody>
+							<tr>
+								<th colspan="2">작성자 - ${maincontent.mem_nick }</th>
+								<th>No.${maincontent.mc_no}</th>
+							</tr>
+							<tr>
+								<td id="content" colspan="3"
+									style="background-color: ${maincontent.mc_color }"><a
+									href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}"
+									id="letterStyle">${maincontent.mc_content }</a></td>
+							</tr>
+							<tr>
+								<td>${maincontent.mc_date }</td>
+								<td>${maincontent.mc_comment }comments</td>
+								<td>${maincontent.mc_like }likes</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</c:forEach>
+			</div>
 	</div>
 
 
@@ -105,7 +116,7 @@ background-color:gray;
 					data:"page="+currentPage,
 					success:function(responseData){
 						//응답된 문자열을 tbody에 추가해서 html로 해석되게 하고
-						$("tbody").append(responseData);
+						$("#body").append(responseData);
 						//로딩이 끝났다고 상태를 바꿔준다.
 						isLoading=false;
 					}
