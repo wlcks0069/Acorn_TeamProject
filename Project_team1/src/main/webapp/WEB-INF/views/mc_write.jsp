@@ -10,8 +10,6 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!----CSS link----->
-<link rel="stylesheet" href="style.css">
 <script
    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style type="text/css"></style>
@@ -26,10 +24,15 @@ nav {
 
 .navBar {
    color: white;
+   text-decoration:none;
    padding-bottom:10px;
 }
 body{
-   background-color: #fff7eb;
+   background-color: #fff2d6;
+}
+
+#floatingTextarea{
+	border-radius: 3%;
 }
 
 </style>
@@ -72,32 +75,13 @@ body{
          </h1>
          <p>${idkey}님 로그인중</p>
          <div class="navBar">
-            <a href="mcboard?page=1">목록</a>
+            <a href="mcboard?page=1" class="navBar">목록으로</a>
          </div>
       </div>
    </nav>
    <div class="container">
       <form action="mcwrite?color=${mc_color.value }" method="post"
          name="mw">
-         <!--          <table> -->
-         <!--             <tr> -->
-         <!--                <td class="col-sm-6"><label for="firstName" class="form-label"><strong>닉네임</strong></label> -->
-         <!--                   <input type="text" class="form-control" id="firstName" -->
-         <%--                   placeholder="" name="mem_nick" value="${usernick}" required --%>
-         <!--                   disabled></td> -->
-
-         <!--                <td class="col-sm-6"><label for="firstName" class="form-label"><strong>이메일</strong></label> -->
-         <!--                   <input type="text" class="form-control" id="firstName" -->
-         <%--                   placeholder="" name="mem_email" value="${useremail}" required --%>
-         <!--                   disabled></td> -->
-         <!--             </tr> -->
-         <!--          </table> -->
-<!--          <div> -->
-<%--             Nickname<input class="form-control" type="text" value=" ${usernick}" --%>
-<%--                aria-label="${usernick}" disabled readonly> E-mail<input --%>
-<%--                class="form-control" type="text" value=" ${useremail}" --%>
-<%--                aria-label="${useremail}" disabled readonly> --%>
-<!--          </div> -->
          <br>
          <div>
             <textarea class="form-control" maxlength="300" cols="50" rows="20"
@@ -127,8 +111,8 @@ body{
             </select>
          </div>
          <div colspan="2" style="text-align: center;">
-            <input type="button" class="btn btn-primary" value="등록" id="btnAdd">
-            <input id="listBtn" type="button" class="btn btn-primary" value="목록"
+            <input type="button" class="btn btn-dark" value="등록" id="btnAdd">
+            <input id="listBtn" type="button" class="btn btn-dark" value="목록"
                onclick="location.href='mcboard?page=1'">
          </div>
       </form>

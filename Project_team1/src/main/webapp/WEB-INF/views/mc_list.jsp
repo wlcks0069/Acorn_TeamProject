@@ -23,7 +23,7 @@ html {
 
 body {
 	padding-top: 220px;
-	background-color: #fff7eb;
+	background-color: #fff2d6;
 }
 
 #content {
