@@ -59,7 +59,7 @@
 			<tr>
 				<td colspan="2" style="text-align: center;"><input
 					type="button" value="등록" id="btnAdd"> <input id="listBtn"
-					type="button" value="뒤로" onclick="location.href='cmboard?page=1&&mc_no=${mc_no}'">
+					type="button" value="뒤로" onclick="location.href='cmboard?mc_page=1&&mc_no=${mc_no}'">
 				</td>
 			</tr>
 		</table>
