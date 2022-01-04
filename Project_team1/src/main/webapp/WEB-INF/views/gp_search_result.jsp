@@ -20,8 +20,6 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 </script>
-</head>
-<body class="text-center">
 <style type="text/css">
 body {
   display: flex;
@@ -31,6 +29,9 @@ body {
   background-color: #f5f5f5;
 }
 </style>
+</head>
+<body class="text-center">
+
 <div class="container">
    <div class="input-form-background row">
       <div class="input-form col-md-12 mx-auto">

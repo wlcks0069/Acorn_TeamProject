@@ -44,7 +44,6 @@
 		id_searchform.submit();
 	}
 </script>
-
 </head>
 <body>
 	<div class="container">
