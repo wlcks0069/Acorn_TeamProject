@@ -47,7 +47,7 @@ body {
 	</nav>
 	<div class="container">
 		<h2 class="mb-3 fw-bold">코멘트 작성</h2>
-		<form action="cmcomment?mc_no=${mc_no }" method="post" name="cw">
+		<form action="cmcomment?mc_no=${mc_no }&&isppmclist=${isppmclist}&&isppcommentlist=${isppcommentlist}" method="post" name="cw">
 			<div>
 				<textarea maxlength="50" style="width: 100%;" rows="10"
 					name="cm_commentcontent" placeholder="Content here" id="floatingTextarea" class="form-control"></textarea>
@@ -55,7 +55,7 @@ body {
 			<div style="text-align: center;">
             <input type="button" class="btn btn-dark" value="등록" id="btnAdd">
             <input id="listBtn" type="button" class="btn btn-dark" value="뒤로"
-               onclick="location.href='cmboard?mc_no=${mc_no}&&mc_page=1'">
+               onclick="location.href='cmboard?page=1&&mc_no=${mc_no}&&mc_page=1&&isppmclist=${isppmclist}&&isppcommentlist=${isppcommentlist}'">
          </div>
 		</form>
 	</div>

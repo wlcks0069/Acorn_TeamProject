@@ -96,7 +96,7 @@ a.navbar-brand {
 			</tr>
 			<tr>
 				<td colspan="2"></td>
-				<td style="text-align: right"><a class="fw-bold" href="like?mc_no=${mc_no }">${like } &thinsp;like<svg
+				<td style="text-align: right"><a class="fw-bold" href="like?mc_no=${mc_no }&&isppmclist=${isppmclist}&&isppcommentlist=${isppcommentlist}&&page=${mc_page }">${like } &thinsp;like<svg
 										xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 										fill="currentColor" class="bi bi-hand-thumbs-up-fill"
 										viewBox="0 0 16 16">
@@ -118,7 +118,7 @@ a.navbar-brand {
 			</c:forEach>
 		</table>
 		<br> <a class="fw-bold text-dark"
-			href="cmcomment?mc_no=${mc_no }">댓글 쓰기<svg
+			href="cmcomment?mc_no=${mc_no }&&isppmclist=${isppmclist}&&isppcommentlist=${isppcommentlist}&&page=${mc_page }">댓글 쓰기<svg
 				xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 				fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"

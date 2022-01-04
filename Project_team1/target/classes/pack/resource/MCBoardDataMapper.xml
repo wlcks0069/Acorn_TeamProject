@@ -34,9 +34,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from gpmainboard where mc_no=#{selectednum}
 	</delete>		
 				
-	<!-- 7. 좋아요 수 갱신 -->	
+	<!-- 7. 좋아요 수 갱신 + -->	
 	<update id="mcLikeCount" parameterType="mcbean">
 		update gpmainboard set mc_like=mc_like+1 where mc_no=#{selectednum}
+	</update>	
+				
+	<!-- 7. 좋아요 수 갱신 - -->	
+	<update id="mcLikeCountminus" parameterType="mcbean">
+		update gpmainboard set mc_like=mc_like-1 where mc_no=#{selectednum}
 	</update>		
 						
 	<!-- 8. 댓글 수 갱신 -->	
