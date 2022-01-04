@@ -23,7 +23,11 @@ public class MCUpdateController {
 	String currentUser = "";
 
 	@RequestMapping(value = "mcupdate", method = RequestMethod.GET)
-	public ModelAndView mcUpdateProcess(@RequestParam("mc_no") String mc_no, HttpSession session) {
+	public ModelAndView mcUpdateProcess(
+			@RequestParam("mc_no") String mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist,
+			HttpSession session) {
 
 		currentUser = (String) session.getAttribute("idkey");
 		System.out.println("MCUpdateController: 현재 User Email " + currentUser);
@@ -41,12 +45,19 @@ public class MCUpdateController {
 		andView.addObject("color", color);
 		andView.addObject("content", content);
 		andView.addObject("mc_no", mc_no);
+		andView.addObject("isppmclist", isppmclist);
+		andView.addObject("isppcommentlist", isppcommentlist);
 
 		return andView;
 	}
 
 	@RequestMapping(value = "mcupdate", method = RequestMethod.POST)
-	public String mcUpdate(MCBoardBean bean, @RequestParam("color") String color, @RequestParam("mc_no")String mc_no) {
+	public String mcUpdate(
+			MCBoardBean bean,
+			@RequestParam("color") String color,
+			@RequestParam("mc_no")String mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 		System.out.println("mcUpdate 요청 받음");
 		bean.setMc_date();
 		bean.setMem_email(currentUser);
@@ -54,7 +65,7 @@ public class MCUpdateController {
 		boolean isSuccess = mcBoardInter.mcUpdate(bean);
 
 		if (isSuccess) {
-			return "redirect:/cmboard?page=1&&mc_no=" + mc_no+"&&mc_page=1";
+			return "redirect:/cmboard?page=1&&mc_no=" + mc_no+"&&mc_page=1&&isppmclist="+isppmclist+"&&isppcommentlist="+isppcommentlist;
 		} else {
 			return "redirect:/error.jsp";
 		}

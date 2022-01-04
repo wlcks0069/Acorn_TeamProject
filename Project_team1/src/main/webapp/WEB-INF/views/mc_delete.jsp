@@ -38,7 +38,7 @@ body {
             <h3 class="mb-3 fw-bold">정말 삭제하시겠습니까?</h3>
    <form action="mcdelete?mc_no=${mc_no }" method="post">
       <input type="submit" class="btn btn-dark btn-md" value="예"/>
-      <button type="button" class="btn btn-dark btn-md" id="noBtn" onclick="location.href='cmboard?page=1&&mc_no=${mc_no}&&mc_page=1'">아니오</button>
+      <button type="button" class="btn btn-dark btn-md" id="noBtn" onclick="location.href='cmboard?page=1&&mc_no=${mc_no}&&mc_page=1&&isppmclist=${isppmclist}&&isppcommentlist=${isppcommentlist}'">아니오</button>
    </form>
 
    

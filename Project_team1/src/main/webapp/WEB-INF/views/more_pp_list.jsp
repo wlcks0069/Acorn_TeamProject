@@ -11,7 +11,7 @@
 	<tr>
 		<td id="content" colspan="3"
 			style="background-color: ${ppmaincontent.mc_color }"><a
-			href="cmboard?page=1&&mc_no=${ppmaincontent.mc_no}&&mc_page=${page}"
+			href="cmboard?page=1&&mc_no=${ppmaincontent.mc_no}&&mc_page=${page}&&isppmclist=true&&isppcommentlist=false"
 			id="letterStyle">${ppmaincontent.mc_content }</a></td>
 	</tr>
 	<tr>
