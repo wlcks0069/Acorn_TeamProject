@@ -48,7 +48,7 @@ nav {
 	top: 0;
 	width: 100%;
 	background-color: #000000b3;
-	font-size: medium;
+	font-size: larger;
 	color: white;
 }
 
@@ -66,6 +66,11 @@ table {
 a.comment {
 	color: black;
 }
+
+a.navbar-brand {
+	color: white;
+	text-decoration: none;
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +81,7 @@ a.comment {
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container-fluid fw-bold">
-			<a class="navbar-brand" href="mcboard?page=1">Git Pen</a>
+			<a class="navbar-brand" style="font-size: 36px;" href="mcboard?page=1">Git Pen</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"

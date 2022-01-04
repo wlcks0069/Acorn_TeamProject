@@ -46,7 +46,7 @@ nav {
 	top: 0;
 	width: 100%;
 	background-color: #000000b3;
-	font-size: medium;
+	font-size: larger;
 	color: white;
 }
 
@@ -64,7 +64,7 @@ a.navbar-brand {
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container-fluid fw-bold">
-			<a class="navbar-brand" href="mcboard?page=1">Git Pen</a>
+			<a class="navbar-brand" style="font-size: 36px;" href="mcboard?page=1">Git Pen</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
@@ -76,7 +76,7 @@ a.navbar-brand {
 					<li class="nav-item"><a class="nav-link active text-white"
 						aria-current="page" href="mcwrite">글쓰기</a></li>
 					<li class="nav-item"><a class="nav-link active text-white"
-						aria-current="page" href="#">마이페이지</a></li>
+						aria-current="page" href="ppboard" method="get" name="currentEmail" value="${idkey}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link active text-white"
 						aria-current="page" href="logout">로그아웃</a></li>
 				</ul>
