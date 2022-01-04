@@ -18,14 +18,25 @@ public class MCDeleteController {
 	private CMBoardInter cmBoardInter;
 	
 	@RequestMapping(value="mcdelete",method=RequestMethod.GET)
-	public ModelAndView mcDeletePeocess(@RequestParam("mc_no")String mc_no) {
+	public ModelAndView mcDeletePeocess(
+			@RequestParam("mc_no")String mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 				
-		return new ModelAndView("mc_delete","mc_no",mc_no);
+		ModelAndView andView=new ModelAndView("mc_delete");
+		andView.addObject("mc_no", mc_no);
+		andView.addObject("isppmclist", isppmclist);
+		andView.addObject("isppcommentlist", isppcommentlist);
+		
+		return andView;
 		
 	}
 	
 	@RequestMapping(value="mcdelete",method=RequestMethod.POST)
-	public String mcDelete(@RequestParam("mc_no")String mc_no) {
+	public String mcDelete(
+			@RequestParam("mc_no")String mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 		
 		boolean isDeleted=mcBoardInter.mcDelete(mc_no);
 		boolean isCmDeleted=cmBoardInter.cmDelete(mc_no);

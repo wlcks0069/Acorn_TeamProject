@@ -112,8 +112,9 @@ a.navbar-brand {
 		</div>
 	</nav>
 	<div class="container">
-		<form action="mcupdate?color=${mc_color.value }&&mc_no=${mc_no}"
-			method="post" name="mu">
+		<form action="mcupdate?color=${mc_color.value }&&mc_no=${mc_no}" method="post" name="mu">
+		<input type="hidden" name="isppmclist" value="${isppmclist}">
+		<input type="hidden" name="isppcommentlist" value="${isppcommentlist}">
 			<br />
 			<div>
 				<textarea class="form-control" style="font-size: 19px; maxlength="300" cols="50" rows="20"
