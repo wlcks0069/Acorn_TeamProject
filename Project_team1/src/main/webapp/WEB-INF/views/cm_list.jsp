@@ -16,16 +16,14 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <style>
-html {
-	font-family: 'Nanum Brush Script', cursive;
-	font-size: larger;
-}
 
 body {
 	padding-top: 220px;
 	background-color: #fff2d6;
 	display: grid;
 	place-items: center;
+	font-family: 'Nanum Brush Script', cursive;
+	font-size:larger;
 }
 
 #content {
@@ -111,8 +109,8 @@ a.navbar-brand {
 		<table>
 			<c:forEach var="cmcontent" items="${cmcontentslist }">
 				<tr class="fw-bold">
-					<td class="text-light bg-dark">${cmcontent.mem_nick }&emsp;</td>
-					<td class="text-light bg-dark">${cmcontent.cm_commentcontent }</td>
+					<td>${cmcontent.mem_nick }&emsp;</td>
+					<td>${cmcontent.cm_commentcontent }</td>
 					<td>&emsp;&emsp;${cmcontent.cm_date }</td>
 				</tr>
 			</c:forEach>
