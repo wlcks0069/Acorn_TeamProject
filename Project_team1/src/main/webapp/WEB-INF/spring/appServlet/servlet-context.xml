@@ -30,5 +30,7 @@
 	<context:component-scan base-package="pack.pp_controller" />
 	<context:component-scan base-package="pack.cm_model" />
 	<context:component-scan base-package="pack.cm_controller" />
+	<context:component-scan base-package="pack.like_model" />
+	<context:component-scan base-package="pack.like_controller" />
 	
 </beans:beans>

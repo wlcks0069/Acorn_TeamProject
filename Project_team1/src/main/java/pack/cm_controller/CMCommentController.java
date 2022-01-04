@@ -33,20 +33,26 @@ public class CMCommentController {
 	
 	@RequestMapping(value = "cmcomment", method = RequestMethod.GET)
 	public ModelAndView cmcomment_get(HttpSession session,
-			@RequestParam("mc_no")String mc_no) {
+			@RequestParam("mc_no")String mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 		
 		currentUser=(String) session.getAttribute("idkey");
 		
 		ModelAndView view_cmcomment=new ModelAndView("cm_comment");
 		view_cmcomment.addObject("mc_no",mc_no);
 		view_cmcomment.addObject("usernick",gpminter.getNick(currentUser)); 
+		view_cmcomment.addObject("isppmclist", isppmclist);
+		view_cmcomment.addObject("isppcommentlist", isppcommentlist);
 		
 		return view_cmcomment;
 	}
 	
 	@RequestMapping(value = "cmcomment", method = RequestMethod.POST)
 	public String cmcomment_post(CMBoardBean cmbean,
-			@RequestParam("mc_no")int mc_no) {
+			@RequestParam("mc_no")int mc_no,
+			@RequestParam("isppmclist") boolean isppmclist,
+			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 		cmbean.setMc_no(mc_no);
 		cmbean.setCm_date();
 		cmbean.setMem_email(currentUser);
@@ -60,7 +66,7 @@ public class CMCommentController {
 		
 		if(result) {
 			System.out.println("cmcomment_post: 댓글 입력 완료");
-			return "redirect:/cmboard?page=1&&mc_no="+mc_no+"&&mc_page=1";
+			return "redirect:/cmboard?page=1&&mc_no="+mc_no+"&&mc_page=1&&isppmclist="+isppmclist+"&&isppcommentlist="+isppcommentlist;
 			//디테일로 이동하지 않고 보드로 이동하는 것으로 확인
 		}
 		else

@@ -15,6 +15,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="pack.pp_model.PPDto" alias="ppdto" />
 		<typeAlias type="pack.cm_controller.CMBoardBean" alias="cmbean" />
 		<typeAlias type="pack.cm_model.CMBoardDto" alias="cmdto" />
+		<typeAlias type="pack.like_controller.LKBean" alias="lkbean" />
+		<typeAlias type="pack.like_model.LKDto" alias="lkdto" />
 	</typeAliases>
 	
 	<mappers>
@@ -22,5 +24,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="pack/resource/MCBoardDataMapper.xml" />
 		<mapper resource="pack/resource/PPDataMapper.xml" />
 		<mapper resource="pack/resource/CMDataMapper.xml" />
+		<mapper resource="pack/resource/LikeDataMapper.xml" />
 	</mappers>
 </configuration>

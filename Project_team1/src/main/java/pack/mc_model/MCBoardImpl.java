@@ -131,4 +131,20 @@ public class MCBoardImpl extends SqlSessionDaoSupport implements MCBoardInter{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public boolean mcLikeCountminus(int selectedContentNumber) {
+		// 좋아요 수 내리기
+		int result = getSqlSession().update("mcLikeCountminus", selectedContentNumber);
+		if (result > 0)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean mcCommentCountminus(int selectedContentNumber) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

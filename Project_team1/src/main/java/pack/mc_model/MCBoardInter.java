@@ -15,7 +15,9 @@ public interface MCBoardInter {
 	boolean mcUpdate(MCBoardBean bean);
 	boolean mcDelete(String selectedContentNumber);
 	boolean mcLikeCount(int selectedContentNumber);
+	boolean mcLikeCountminus(int selectedContentNumber);
 	boolean mcCommentCount(int selectedContentNumber);
+	boolean mcCommentCountminus(int selectedContentNumber);
 	
 	boolean mcComment(MCBoardBean bean);
 	
