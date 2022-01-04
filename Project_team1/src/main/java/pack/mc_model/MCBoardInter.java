@@ -8,7 +8,7 @@ import pack.mc_controller.MCBoardBean;
 public interface MCBoardInter {
 
 	ArrayList<MCBoardDto> getList();
-	ArrayList<MCBoardDto> getSearch(MCBoardDto bean);
+	ArrayList<MCBoardDto> getSearch(MCBoardBean bean);
 	
 	MCBoardDto getDetail(String selectedContentNumber);
 	boolean mcWrite(MCBoardBean bean);

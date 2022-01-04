@@ -90,7 +90,7 @@ a.comment {
 					<li class="nav-item"><a class="nav-link active text-white"
 						aria-current="page" href="mcwrite">글쓰기</a></li>
 					<li class="nav-item"><a class="nav-link active text-white"
-						aria-current="page" href="#">마이페이지</a></li>
+						aria-current="page" href="ppboard" method="get" name="currentEmail" value="${idkey}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link active text-white"
 						aria-current="page" href="logout">로그아웃</a></li>
 				</ul>
@@ -114,14 +114,14 @@ a.comment {
 							<tr>
 								<td id="content" colspan="3"
 									style="background-color: ${maincontent.mc_color }"><a
-									href="cmboard?mc_no=${maincontent.mc_no}&&mc_page=${page}"
+									href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}&&isppmclist=false&&isppcommentlist=false"
 									id="letterStyle">${maincontent.mc_content }</a></td>
 							</tr>
 							<tr>
 								<td>${maincontent.mc_date }</td>
 								<td class="fw-bold text-dark">${maincontent.mc_comment }<a
 									class="comment"
-									href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}">comments
+									href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}&&isppmclist=false&&isppcommentlist=false">comments
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-vector-pen"
 											viewBox="0 0 16 16">
@@ -149,7 +149,6 @@ a.comment {
 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-   
       //페이지가 로딩될 때 1page를 보여주기 때문에 초기값을 1로 지정한다.
       let currentPage=${page};
       //현재 로딩중인지 여부를 관리할 변수

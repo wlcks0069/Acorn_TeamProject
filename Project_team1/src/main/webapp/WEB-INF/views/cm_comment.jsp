@@ -55,7 +55,7 @@ body {
 			<div style="text-align: center;">
             <input type="button" class="btn btn-dark" value="등록" id="btnAdd">
             <input id="listBtn" type="button" class="btn btn-dark" value="뒤로"
-               onclick="location.href='cmboard?mc_no=${mc_no}&&mc_page=1'">
+               onclick="location.href='cmboard?page=1&&mc_no=${mc_no}&&mc_page=1'">
          </div>
 		</form>
 	</div>
