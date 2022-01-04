@@ -54,7 +54,7 @@ public class MCUpdateController {
 		boolean isSuccess = mcBoardInter.mcUpdate(bean);
 
 		if (isSuccess) {
-			return "redirect:/cmboard?mc_no=" + mc_no+"&&mc_page=1";
+			return "redirect:/cmboard?page=1&&mc_no=" + mc_no+"&&mc_page=1";
 		} else {
 			return "redirect:/error.jsp";
 		}

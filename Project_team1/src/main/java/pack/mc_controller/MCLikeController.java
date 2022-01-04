@@ -41,9 +41,6 @@ public class MCLikeController {
 		// 있으면 좋아요 취소, 없으면 좋아요 입력
 		ArrayList<LKDto> lk_List = LKInter.getOne(lkBean);
 		
-<<<<<<< HEAD
-		return "redirect:/cmboard?page=1&&mc_no="+mc_no+"&&mc_page=1";
-=======
 		//없음 - 등록함
 		if(lk_List.isEmpty()) {
 			//게시글의 좋아요 카운트 증가
@@ -64,7 +61,5 @@ public class MCLikeController {
 		}
 		
 		
-		
->>>>>>> branch 'main' of https://github.com/wlcks0069/Acorn_TeamProject
 	}
 }
