@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 2. 특정 파라미터에서 조건값을 만족하는 게시글 리스트 출력 -->	
 	<select id="specificMCList" parameterType="mcbean" resultType="mcdto">
-		select * from gpmainboard where ${searchParam} like '%' || #{searchValue} ||'%'
+		select * from gpmainboard where ${searchParam} like '%' || #{searchValue} ||'%' order by mc_no desc
 	</select>
 	
 	<!-- 3. 신규 글 작성을 위한 정보 기입 구문-->	

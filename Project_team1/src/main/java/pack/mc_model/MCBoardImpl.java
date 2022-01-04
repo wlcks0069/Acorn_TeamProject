@@ -24,7 +24,7 @@ public class MCBoardImpl extends SqlSessionDaoSupport implements MCBoardInter{
 	}
 
 	@Override
-	public ArrayList<MCBoardDto> getSearch(MCBoardDto mcbean) {
+	public ArrayList<MCBoardDto> getSearch(MCBoardBean mcbean) {
 		// 조건에 부합하는 게시글 리스트 획득
 		return (ArrayList)getSqlSession().selectList("specificMCList", mcbean);
 	}

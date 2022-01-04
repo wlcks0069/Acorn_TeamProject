@@ -30,6 +30,7 @@ a {
 		<h1><a href="mcboard?page=1">Git Pen</a></h1>
 		<h5>${idkey} 로그인중</h5>
 		<a href="logout">로그아웃</a>
+		<a href="ppboard" method="get" name="currentEmail" value="${idkey}">마이페이지</a>
 		<a href="mcwrite">글쓰기</a>
 		<table>
 			<tbody>
@@ -42,7 +43,7 @@ a {
 					<tr>
 						<td id="content" colspan="3"
 							style="background-color: ${maincontent.mc_color }"><a
-							href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}" id="letterStyle">${maincontent.mc_content }</a>
+							href="cmboard?page=1&&mc_no=${maincontent.mc_no}&&mc_page=${page}&&ispp=false" id="letterStyle">${maincontent.mc_content }</a>
 						</td>
 					</tr>
 					<tr>
@@ -98,7 +99,6 @@ a {
 						isLoading=false;
 					}
 				});
-			}
 		});
 		
 	</script>

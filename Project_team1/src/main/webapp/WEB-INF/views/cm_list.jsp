@@ -42,6 +42,14 @@ a {
 	</table>
 	<a href="cmcomment?mc_no=${mc_no }">댓글 쓰기</a>
 	<a href="mcboard?page=${mc_page }">목록 보기</a>
+		
+	<c:if test="${isppmclist}">
+		<a href="ppboard" method="get">마이페이지</a>
+	</c:if>		
+	
+	<c:if test="${isppcommentlist}">
+		<a href="ppcommentboard">나의 댓글 목록 보기</a>
+	</c:if>
 	
 	<c:if test="${idkey == mem_email }">
 		<a href="mcupdate?mc_no=${mc_no }">수정하기</a>

@@ -50,40 +50,30 @@ public class MCBoardController {
 	}
 	
 	@RequestMapping(value="mcboard", method=RequestMethod.GET)
-	public ModelAndView mcBoard(@RequestParam("page")int page, HttpSession session) {
-		String mc_no="32";
+	public ModelAndView mcBoard(@RequestParam("page")int page) {
+		System.out.println("MCBoardController: 호출 완료");
 		totalRecord=boardInter.totalCount();
+		System.out.println("MCBoardController: page 확인 "+page);
 		
 		ArrayList<MCBoardDto> mcList=boardInter.getList();
 		ArrayList<MCBoardDto> result=getListData(mcList, page);
-		ArrayList<String> numList=new ArrayList<String>();
 		
-		System.out.println("MCBoardController: 호출 완료");
+		
 		System.out.println("MCBoardController: 0번 인덱스 자료 본문 확인 "+mcList.get(0).getMc_content());
-		
-		for(int i=0; i<result.size(); i++) {
-			String a=Integer.toString(result.get(i).getMc_no());
-			numList.add(a);
-		}
-		ArrayList<CMBoardDto> cmList=cmBoardInter.getList(mc_no);
-		
-		session.setAttribute("numList", numList);
-		session.setAttribute("cmList", cmList);
 		
 		ModelAndView andView=new ModelAndView("mc_list");
 		andView.addObject("maincontentslist",result);
 		andView.addObject("totalpage",getTotalPage());
 		andView.addObject("page",page);
-		andView.addObject("cmList",cmList);
 		
 		return andView;
 	}
 	
 	@RequestMapping(value="moremcboard", method=RequestMethod.POST)
 	public ModelAndView moreMcBoard(@RequestParam("page")int page) {
-		String mc_no="30";
+		
 		totalRecord=boardInter.totalCount();
-		ArrayList<CMBoardDto> cmList=cmBoardInter.getList(mc_no);
+		
 		ArrayList<MCBoardDto> mcList=boardInter.getList();
 		ArrayList<MCBoardDto> result=getListData(mcList, page);
 		
@@ -94,27 +84,7 @@ public class MCBoardController {
 		moreView.addObject("maincontentslist",result);
 		moreView.addObject("totalpage",getTotalPage());
 		moreView.addObject("page",page);
-		moreView.addObject("cmList",cmList);
 		
 		return moreView;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
