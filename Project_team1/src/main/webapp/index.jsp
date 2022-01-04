@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <!----CSS link----->
-<link rel="stylesheet" href="style.css">
+
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
@@ -158,7 +158,7 @@ body {
 							<div class="brand-wrapper">
 								<img src="https://cdn.pixabay.com/photo/2019/06/24/08/45/quill-pen-4295517_960_720.png" class="logo">
 							</div>
-							<p class="login-card-description">Sign into GitPen</p>
+							<p class="login-card-description">Sign in to GitPen</p>
 							<form action="login" method="post">
 								<div class="form-group">
 									<label for="email" class="sr-only">Email</label> <input

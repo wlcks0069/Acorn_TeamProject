@@ -29,6 +29,7 @@ public class MCDeleteController {
 		
 		boolean isDeleted=mcBoardInter.mcDelete(mc_no);
 		boolean isCmDeleted=cmBoardInter.cmDelete(mc_no);
+		System.out.println(isCmDeleted);
 		if(isDeleted&&isCmDeleted) {
 			return "redirect:/mcboard?page=1";
 		}else {
