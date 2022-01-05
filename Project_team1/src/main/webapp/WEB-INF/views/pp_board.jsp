@@ -18,7 +18,7 @@
 <style>
 
 body {
-	padding-top: 220px;
+	padding-top: 130px;
 	background-color: #fff2d6;
 	font-family: 'Nanum Brush Script', cursive;
 	font-size:larger;
@@ -71,6 +71,33 @@ a.navbar-brand {
 	color: white;
 	text-decoration: none;
 }
+
+.box {
+	border:2px solid black; padding:10px;
+	text-align: left;
+	font-size: 18px;
+	background: white;
+	background-size: cover;
+	height: 24	0px;
+}
+
+p {
+	margin-bottom: 20px;
+	margin-left: 170px;
+	line-height: 8px;
+}
+
+.purple {
+	color: #6f42c1;
+}
+
+.phead {
+	font-size: 22px;
+}
+.sidep {
+	display: inline-block;
+	font-size: 22px;
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,24 +124,26 @@ a.navbar-brand {
 				</ul>
 			</div>
 			<div>
-				<p class="navp mb-0" style="text-align: right">${idkey}님&thinsp;로그인중</p>
+				<p class="navp mb-0" style="text-align: right;">${idkey}님&thinsp;로그인중</p>
 			</div>
 		</div>
 	</nav>
-	
-	<!-- 신규 작성분 -------------------------------------------------------------------- -->
-	<hr>
-		좋아요 했던 글들의 색 리스트 (업데이트 이후 기준만 집계됩니다)<br/>
-		노랑 - ${colorbox.yellow }<br/>
-		빨강 - ${colorbox.red }<br/>
-		파랑 - ${colorbox.blue }<br/>
-		보라 - ${colorbox.purple }<br/>
-		회색 - ${colorbox.grey }<br/>
-		초록 - ${colorbox.green }<br/>
-		<hr>
 		
-		작성한 댓글 (숫자 클릭시 댓글 리스트로 전환)<br/>
-		댓글 수 - <a href="ppcommentboard" method="get">${commentcount } 개</a>
+	<!-- 신규 작성분 -------------------------------------------------------------------- -->
+	
+	<div class="box fw-bold">
+		<p class="phead">좋아요 했던 글들의 색 리스트 (업데이트 이후 기준만 집계됩니다)</p>
+		<p class="text-warning">노랑 - ${colorbox.yellow }</p>
+		<p class="text-danger">빨강 - ${colorbox.red }</p>
+		<p class="text-primary">파랑 - ${colorbox.blue }</p>
+		<p class="purple">보라 - ${colorbox.purple }</p>
+		<p class="text-secondary">회색 - ${colorbox.grey }</p>
+		<p class="text-success">녹색 - ${colorbox.green }</p>
+		<p class="sidep">작성한 댓글 (숫자 클릭시 댓글 리스트로 전환)</p>
+		<p class="sidep">댓글 수 - <a style="color: #03c75a;" href="ppcommentboard" method="get">${commentcount } 개</a></p>
+	</div>	
+		
+	<br>	
 	<!-- ---------------------------------------------------------------------------- -->
 	
 	<div>
