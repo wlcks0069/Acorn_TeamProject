@@ -110,6 +110,7 @@ a.navbar-brand {
 		파랑 - ${colorbox.blue }<br/>
 		보라 - ${colorbox.purple }<br/>
 		회색 - ${colorbox.grey }<br/>
+		초록 - ${colorbox.green }<br/>
 		<hr>
 		
 		작성한 댓글 (숫자 클릭시 댓글 리스트로 전환)<br/>

@@ -66,7 +66,8 @@ public class PPImpl extends SqlSessionDaoSupport implements PPInter{
 					<option value="#EB6363">화남 / red</option>
 					<option value="#A5C9E8">우울 / blue</option>
 					<option value="#DDBADE">무서움 / purple</option>
-					<option value="#E2E2E2">심심 / grey</option>
+					<option value="#bdbdbd">심심 / grey</option>
+					<option value="#C5E1A5">평온 / green</option>
 		 */
 		
 		//반환할 해시맵 생성
@@ -78,6 +79,7 @@ public class PPImpl extends SqlSessionDaoSupport implements PPInter{
 		colorbox.put("blue", 0);
 		colorbox.put("purple", 0);
 		colorbox.put("grey", 0);
+		colorbox.put("green", 0);
 		
 		for (int i = 0; i < likedMccolor.length; i++) {
 			switch (likedMccolor[i]) {
@@ -105,11 +107,17 @@ public class PPImpl extends SqlSessionDaoSupport implements PPInter{
 				colorbox.put("purple", tmp3);
 				System.out.println("colorStack: 보라 추가");
 				break;
-			case "#E2E2E2":		//grey
+			case "#bdbdbd":		//grey
 				int tmp4=colorbox.get("grey");
 				tmp4++;
 				colorbox.put("grey", tmp4);
 				System.out.println("colorStack: 회색 추가");
+				break;
+			case "#C5E1A5":		//green
+				int tmp5=colorbox.get("green");
+				tmp5++;
+				colorbox.put("green", tmp5);
+				System.out.println("colorStack: 초록 추가");
 				break;
 			default:
 				System.out.println("colorStack: "+"아무것도 없음");

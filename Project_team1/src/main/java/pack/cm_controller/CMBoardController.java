@@ -55,8 +55,10 @@ public class CMBoardController {
 			@RequestParam("isppmclist") boolean isppmclist,
 			@RequestParam("isppcommentlist") boolean isppcommentlist,
 			HttpSession session) {
-		
+			
+			//페이징 처리
 			totalRecord = cmBoardInter.totalCount();
+			
 			MCBoardDto searchedData = boardInter.getDetail(mc_no);
 			String searchedContent = searchedData.getMc_content();
 			String color = searchedData.getMc_color();

@@ -29,19 +29,21 @@ public class CMCommentController {
 	@Autowired
 	private GPMemberInter gpminter;
 	
-	String currentUser="";
-	
 	@RequestMapping(value = "cmcomment", method = RequestMethod.GET)
 	public ModelAndView cmcomment_get(HttpSession session,
 			@RequestParam("mc_no")String mc_no,
 			@RequestParam("isppmclist") boolean isppmclist,
 			@RequestParam("isppcommentlist") boolean isppcommentlist) {
 		
-		currentUser=(String) session.getAttribute("idkey");
+		System.out.println("cmcomment_get: 호출 완료");
+		//받은 물건 확인
+		System.out.println("cmcomment_get: 이메일: "+(String) session.getAttribute("idkey"));
+		System.out.println("cmcomment_get: 본문글번호: "+mc_no);
 		
+		//ModelAndView에 세팅하여 cm_comment.jsp로 넘김
 		ModelAndView view_cmcomment=new ModelAndView("cm_comment");
 		view_cmcomment.addObject("mc_no",mc_no);
-		view_cmcomment.addObject("usernick",gpminter.getNick(currentUser)); 
+		view_cmcomment.addObject("usernick",gpminter.getNick((String) session.getAttribute("idkey"))); 
 		view_cmcomment.addObject("isppmclist", isppmclist);
 		view_cmcomment.addObject("isppcommentlist", isppcommentlist);
 		
@@ -52,15 +54,20 @@ public class CMCommentController {
 	public String cmcomment_post(CMBoardBean cmbean,
 			@RequestParam("mc_no")int mc_no,
 			@RequestParam("isppmclist") boolean isppmclist,
-			@RequestParam("isppcommentlist") boolean isppcommentlist) {
+			@RequestParam("isppcommentlist") boolean isppcommentlist,
+			HttpSession session) {
+		
+		System.out.println("cmcomment_post: 호출 완료");
+		//본문 내용이 이상없이 세팅되어 왔는지 확인하기
+		System.out.println("cmcomment_post: 받은 내용 "+cmbean.getCm_commentcontent());
+		
+		//셋팅 (본문내용은 이미 잘 들어와있으므로, 다른 DB요소만 기입)
+		int commentNum=cmBoardInter.currentMaxnum()+1;
+		cmbean.setCm_no(commentNum);
 		cmbean.setMc_no(mc_no);
+		cmbean.setMem_nick(gpminter.getNick((String) session.getAttribute("idkey")));
+		cmbean.setMem_email((String) session.getAttribute("idkey"));
 		cmbean.setCm_date();
-		cmbean.setMem_email(currentUser);
-		cmbean.setMem_nick(gpminter.getNick(currentUser));
-		
-		int newNum=cmBoardInter.currentMaxnum()+1;
-		
-		cmbean.setCm_no(newNum);
 		
 		boolean result = cmBoardInter.cmWrite(cmbean);
 		
